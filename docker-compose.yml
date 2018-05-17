@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  lostinlublin:
+    image: lostinlublin
+    build:
+      context: .
+      dockerfile: LostInLublin\Dockerfile

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/toolbarLayout"
+        android:layout_alignParentTop="true">
+        <include
+            layout="@layout/toolbar" />
+    </LinearLayout>
+    <MvvmCross.Platforms.Android.Binding.Views.MvxListView
+        android:id="@+id/postsLstv"
+        android:layout_width="match_parent"
+        local:MvxItemTemplate="@layout/list_item"
+        local:MvxBind="ItemsSource Posts; ItemClick GoDetailsCmd, CommandParameter=1"
+        android:layout_height="match_parent" />
+</LinearLayout>

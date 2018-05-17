@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+    <ffimageloading.cross.MvxCachedImageView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        local:MvxBind="ImagePath Picture, Converter=PictureConverter; ErrorPlaceholderImagePath '@drawable/place.png'; LoadingPlaceholderImagePath  '@drawable/place.png'" />
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/messageTxt"
+        android:textSize="14sp"
+        local:MvxBind="Text CreatedDate" />
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/messageTxt"
+        android:textSize="18sp"
+        android:ellipsize="end"
+        android:maxLines="3"
+        local:MvxBind="Text Message" />
+</LinearLayout>
