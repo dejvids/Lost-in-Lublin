@@ -16,6 +16,6 @@
         android:id="@+id/postsLstv"
         android:layout_width="match_parent"
         local:MvxItemTemplate="@layout/list_item"
-        local:MvxBind="ItemsSource Posts; ItemClick GoDetailsCmd, CommandParameter=1"
+        local:MvxBind="ItemsSource Posts; ItemClick GoDetailsCmd"
         android:layout_height="match_parent" />
 </LinearLayout>

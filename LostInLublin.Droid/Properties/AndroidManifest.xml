@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="LostInLublin.Droid.LostInLublin.Droid" android:versionCode="1" android:versionName="1.0" android:installLocation="auto">
-	<uses-sdk android:targetSdkVersion="26" android:minSdkVersion="21" />
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="LostInLublin.Droid.LostInLublin.Droid" android:versionCode="1" android:versionName="1.0" android:installLocation="preferExternal">
+	<uses-sdk android:targetSdkVersion="27" android:minSdkVersion="21" />
 	<application android:label="@string/app_name" android:theme="@style/PillerTheme" android:icon="@drawable/icon64x64"></application>
 </manifest>

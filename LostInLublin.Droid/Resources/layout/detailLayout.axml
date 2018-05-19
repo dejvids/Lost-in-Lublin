@@ -3,7 +3,14 @@
     xmlns:local="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+    <ffimageloading.cross.MvxCachedImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android.ScaleType="fitXY"
+        local:MvxBind="ImagePath Picture" />
     <TextView
         android:layout_height="wrap_content"
         android:layout_width="match_parent"

@@ -14,6 +14,7 @@ using MvvmCross.Platforms.Android.Binding.Views;
 using MvvmCross.Platforms.Android.Presenters.Attributes;
 using MvvmCross.Platforms.Android.Views;
 
+
 using MvvmCross.Views;
 using Android.Content.PM;
 using System.Collections.Generic;
@@ -35,7 +36,7 @@ namespace LostInLublin.Droid.Views
             var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
             SetSupportActionBar(toolbar);
             var view = this.BindingInflate(Resource.Layout.postsLayout, null);
-            postsList = view.FindViewById<MvxListView>(Resource.Id.postsLstv);
+           // postsList = view.FindViewById<MvxListView>(Resource.Id.postsLstv);
             // postsList.ItemTemplateId = Resource.Layout.postItem;
             // postsList.Adapter = new PostsAdapter(this.ApplicationContext, (IMvxAndroidBindingContext)this.BindingContext);
             // postsList.ItemsSource = new List<Post> { new Post { Message = "Znaleziono" }, new Post { Message = "szukaj" } };

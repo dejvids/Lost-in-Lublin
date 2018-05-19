@@ -13,17 +13,20 @@ using LostInLublin.Core.ViewModels;
 using MvvmCross.Droid.Support.V7.AppCompat;
 using MvvmCross.Platforms.Android.Presenters.Attributes;
 
+
 namespace LostInLublin.Droid.Views
 {
     [MvxActivityPresentation]
     [Activity]
     class DetailView:MvxAppCompatActivity<DetailViewModel>
     {
+
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
             SetContentView(Resource.Layout.detailLayout);
             var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
+
             SetSupportActionBar(toolbar);
 
         }

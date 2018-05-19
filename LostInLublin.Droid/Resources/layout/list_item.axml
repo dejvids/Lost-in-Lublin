@@ -4,22 +4,44 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content">
-    <ffimageloading.cross.MvxCachedImageView
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        local:MvxBind="ImagePath Picture, Converter=PictureConverter; ErrorPlaceholderImagePath '@drawable/place.png'; LoadingPlaceholderImagePath  '@drawable/place.png'" />
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/messageTxt"
-        android:textSize="14sp"
-        local:MvxBind="Text CreatedDate" />
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/messageTxt"
-        android:textSize="18sp"
-        android:ellipsize="end"
-        android:maxLines="3"
-        local:MvxBind="Text Message" />
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/card_margin"
+        android:elevation="3dp"
+        local:cardCornerRadius="@dimen/card_album_radius">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ffimageloading.cross.MvxCachedImageView
+                android:id="@+id/thumbnail"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/album_cover_height"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                local:MvxBind="ImagePath Picture, Converter=PictureConverter; ErrorPlaceholderImagePath '@drawable/place.png'; LoadingPlaceholderImagePath  '@drawable/place.png'" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/messageTxt"
+                android:layout_below="@id/thumbnail"
+                android:paddingLeft="@dimen/album_title_padding"
+                android:paddingRight="@dimen/album_title_padding"
+                android:paddingTop="@dimen/album_title_padding"
+                android:textSize="@dimen/album_title"
+                android:ellipsize="end"
+                android:maxLines="3"
+                local:MvxBind="Text Message" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/messageTxt"
+                android:paddingBottom="@dimen/songs_count_padding_bottom"
+                android:paddingLeft="@dimen/album_title_padding"
+                android:paddingRight="@dimen/album_title_padding"
+                android:textSize="@dimen/songs_count"
+                local:MvxBind="Text CreatedDate" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
 </LinearLayout>
