@@ -28,17 +28,17 @@ namespace LostInLublin.Controllers
        [HttpGet]
         public async Task<IActionResult> Get()
         {
-            GetPosts();
             var posts = await _dbContext.Posts.ToListAsync();
             Lastdate = posts.Max(p => p.CreatedDate);
             this._posts = posts;
             return Ok(posts.OrderByDescending(x => x.CreatedDate));
+           // return Ok(posts);
         }
 
        
-        public IActionResult GetPosts()
+        public async  Task<IEnumerable<PostDto>> GetPosts()
         {
-            var createdDate = _dbContext.Posts.Max(p => p.CreatedDate);
+              var createdDate = _dbContext.Posts.Max(p => p.CreatedDate);
             var minDate = DateTime.Now;
             IEnumerable<Services.PostDto> posts = new List<Services.PostDto>();
             var accountTask = _facebookService.GetAccountAsync(FacebookSettings.AccessToken);
@@ -74,7 +74,7 @@ namespace LostInLublin.Controllers
                 });
                 _dbContext.SaveChanges();
             }
-            return Ok(newPosts);
+            return newPosts;
         }
         // GET api/values/5
         [HttpGet("{id}")]

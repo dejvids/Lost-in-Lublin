@@ -9,7 +9,7 @@ Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-co
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MobileApp", "MobileApp", "{EBAB9671-EACD-49D4-AC0F-D48E9B603770}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LostInLublin.Core", "..\LostInLublin.Core\LostInLublin.Core.csproj", "{D1ABA98D-1B52-4F7C-96A0-0033AF0C1AB0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LostInLublin.Core", "..\LostInLublin.Core\LostInLublin.Core.csproj", "{D1ABA98D-1B52-4F7C-96A0-0033AF0C1AB0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LostInLublin.Droid", "LostInLublin.Droid\LostInLublin.Droid.csproj", "{ACF58893-867E-480F-B822-0A83500C30E9}"
 EndProject
