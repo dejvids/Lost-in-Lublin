@@ -28,7 +28,8 @@ namespace LostInLublin.Droid.Views
             var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
 
             SetSupportActionBar(toolbar);
-
+           // SupportActionBar.SetDisplayHomeAsUpEnabled(true);
+           // SupportActionBar.SetDisplayShowHomeEnabled(true);
         }
     }
 }

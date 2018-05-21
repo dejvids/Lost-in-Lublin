@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "437084110064",
+    "firebase_url": "https://lostinlublin.firebaseio.com",
+    "project_id": "lostinlublin",
+    "storage_bucket": "lostinlublin.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:437084110064:android:79bea0a51c12871e",
+        "android_client_info": {
+          "package_name": "LostInLublin.Droid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "437084110064-hecceg99laq99i412k85p3g2gng8v2mf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB72OXB3rS_W_gqnYzfsk-aY3GT9FZQ7Ak"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

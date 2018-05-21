@@ -19,6 +19,7 @@
                 android:id="@+id/thumbnail"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/album_cover_height"
+                android:scaleType="fitXY"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 local:MvxBind="ImagePath Picture, Converter=PictureConverter; ErrorPlaceholderImagePath '@drawable/place.png'; LoadingPlaceholderImagePath  '@drawable/place.png'" />
             <TextView
@@ -34,7 +35,8 @@
                 android:maxLines="3"
                 local:MvxBind="Text Message" />
             <TextView
-                android:layout_width="match_parent"
+                android:id="@+id/dateTxt"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/messageTxt"
                 android:paddingBottom="@dimen/songs_count_padding_bottom"
@@ -42,6 +44,15 @@
                 android:paddingRight="@dimen/album_title_padding"
                 android:textSize="@dimen/songs_count"
                 local:MvxBind="Text CreatedDate" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/dateTxt"
+                android:text="Więcej"
+                android:textColor="?attr/colorPrimaryDark"
+                android:textStyle="bold"
+                android:layout_alignParentEnd="true"
+                android:gravity="right" />
         </RelativeLayout>
     </android.support.v7.widget.CardView>
 </LinearLayout>

@@ -9,6 +9,6 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
-        android:foreground="@color/bright_foreground_inverse_material_light"
+        android:textColor="@color/md_white_1000"
         local:layout_scrollFlags="scroll|enterAlways" />
 </android.support.design.widget.AppBarLayout>

@@ -13,6 +13,7 @@ using MvvmCross.Platforms.Android.Binding.BindingContext;
 using MvvmCross.Platforms.Android.Binding.Views;
 using MvvmCross.Platforms.Android.Presenters.Attributes;
 using MvvmCross.Platforms.Android.Views;
+using Android.Util;
 
 
 using MvvmCross.Views;
@@ -24,14 +25,26 @@ namespace LostInLublin.Droid.Views
     //[MvxFragmentPresentation(typeof(RootViewModel), Resource.Id.content_frame, true)]
     //[Register(nameof(PostsView))]
     [MvxActivityPresentation]
-    [Activity(ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.ScreenSize | ConfigChanges.KeyboardHidden, MainLauncher = true)]
+    [Activity(ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.ScreenSize | ConfigChanges.KeyboardHidden, MainLauncher = false)]
 
     public class PostsView : MvxAppCompatActivity<PostsViewModel>
     {
+        public const string TAG = "MainActivity";
         MvxListView postsList;
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
+            if (Intent.Extras != null)
+            {
+                foreach (var key in Intent.Extras.KeySet())
+                {
+                    if (key != null)
+                    {
+                        var value = Intent.Extras.GetString(key);
+                        Log.Debug(TAG, "Key: {0} Value: {1}", key, value);
+                    }
+                }
+            }
             SetContentView(Resource.Layout.postsLayout);
             var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
             SetSupportActionBar(toolbar);
