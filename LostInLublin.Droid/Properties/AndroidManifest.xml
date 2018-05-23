@@ -2,12 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" package="LostInLublin.Droid.LostInLublin.Droid" android:versionCode="1" android:versionName="1.0" android:installLocation="preferExternal">
 	<uses-sdk android:targetSdkVersion="27" android:minSdkVersion="21" />
 	<application android:label="@string/app_name" android:theme="@style/PillerTheme" android:icon="@drawable/icon64x64"></application>
-  <!--<receiver android:name="com.google.firebase.iid.FirebaseInstanceIdInternalReceiver" android:exported="false" />
+  <receiver android:name="com.google.firebase.iid.FirebaseInstanceIdInternalReceiver" android:exported="false" />
   <receiver android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:exported="true" android:permission="com.google.android.c2dm.permission.SEND">
     <intent-filter>
       <action android:name="com.google.android.c2dm.intent.RECEIVE" />
       <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
       <category android:name="${applicationId}" />
     </intent-filter>
-  </receiver>-->
+  </receiver>
 </manifest>
