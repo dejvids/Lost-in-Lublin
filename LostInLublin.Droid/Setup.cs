@@ -16,9 +16,8 @@ using MvvmCross.Logging;
 
 namespace LostInLublin.Droid
 {
-    public class Setup
-    {
-        /*
+
+        
         public class Setup : MvxAppCompatSetup<App>
 
         {
@@ -58,7 +57,6 @@ namespace LostInLublin.Droid
             //}
 
         }
-        */
+        
     }
     
-}

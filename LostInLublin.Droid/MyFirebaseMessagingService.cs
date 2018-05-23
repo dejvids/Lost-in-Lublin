@@ -3,11 +3,13 @@ using System.Linq;
 using Android;
 using Android.App;
 using Android.Content;
+using Android.Media;
 using Android.Util;
 using Firebase.Messaging;
 using LostInLublin.Droid.Views;
+using static Android.Media.Audiofx.BassBoost;
 
-namespace LostInLublin.Droid.Services
+namespace LostInLublin.Droid
 {
     [Service]
     [IntentFilter(new[] { "com.google.firebase.MESSAGING_EVENT" })]
@@ -34,16 +36,19 @@ namespace LostInLublin.Droid.Services
 
         void SendNotification(string messageBody)
         {
-            var intent = new Intent(this, typeof(PostsView));
+            var intent = new Intent(this, typeof(StartView));
             intent.AddFlags(ActivityFlags.ClearTop);
             var pendingIntent = PendingIntent.GetActivity(this, 0, intent, PendingIntentFlags.OneShot);
 
             var notificationBuilder = new Notification.Builder(this)
                         .SetContentTitle("FCM Message")
-                        .SetSmallIcon(Resource.Drawable.ic_launcher)
+                        .SetSmallIcon(Resource.Drawable.place)
                         .SetContentText(messageBody)
+                        .SetSound(RingtoneManager.GetDefaultUri(RingtoneType.Notification))
                         .SetAutoCancel(true)
-                        .SetContentIntent(pendingIntent);
+                        .SetContentIntent(pendingIntent)
+                        .SetPriority((int)NotificationPriority.High);
+                        
 
             var notificationManager = NotificationManager.FromContext(this);
 

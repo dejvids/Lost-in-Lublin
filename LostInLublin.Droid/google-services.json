@@ -1,27 +1,39 @@
 {
   "project_info": {
-    "project_number": "437084110064",
-    "firebase_url": "https://lostinlublin.firebaseio.com",
-    "project_id": "lostinlublin",
-    "storage_bucket": "lostinlublin.appspot.com"
+    "project_number": "930876947890",
+    "firebase_url": "https://aznsproj.firebaseio.com",
+    "project_id": "aznsproj",
+    "storage_bucket": "aznsproj.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:437084110064:android:79bea0a51c12871e",
+        "mobilesdk_app_id": "1:930876947890:android:d9a2b6e7a896707c",
         "android_client_info": {
-          "package_name": "LostInLublin.Droid"
+          "package_name": "LostInLublin.Droid.LostInLublin.Droid"
         }
       },
       "oauth_client": [
         {
-          "client_id": "437084110064-hecceg99laq99i412k85p3g2gng8v2mf.apps.googleusercontent.com",
+          "client_id": "930876947890-v7kjckrhurvp0ql826qtj2dija97gilv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "LostInLublin.Droid.LostInLublin.Droid",
+            "certificate_hash": "3afb20cd4326be00ab8cb24cd24f72de88660ca4"
+          }
+        },
+        {
+          "client_id": "930876947890-o8jm25tt0d4k8udsirikn5g79864juns.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "930876947890-o8jm25tt0d4k8udsirikn5g79864juns.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyB72OXB3rS_W_gqnYzfsk-aY3GT9FZQ7Ak"
+          "current_key": "AIzaSyBwq_aDzyWj_swb6p3z-nHDHj2-C3-w0e4"
         }
       ],
       "services": {
@@ -29,8 +41,13 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "930876947890-o8jm25tt0d4k8udsirikn5g79864juns.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2

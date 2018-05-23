@@ -181,20 +181,21 @@
     <AndroidResource Include="Resources\values\styles.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <Compile Include="Services\MyFirebaseIIDService.cs" />
-    <Compile Include="Services\MyFirebaseMessagingService.cs" />
+    <Compile Include="MyFirebaseIIDService.cs" />
+    <Compile Include="MyFirebaseMessagingService.cs" />
     <Compile Include="Setup.cs" />
     <Compile Include="Views\DetailView.cs" />
     <Compile Include="Views\PostsAdapter.cs" />
     <Compile Include="Views\PostsView.cs" />
-    <Compile Include="Views\RootView.cs" />
     <Compile Include="Views\StartView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
     <None Include="Resources\AboutResources.txt" />
-    <None Include="Properties\AndroidManifest.xml" />
+    <None Include="Properties\AndroidManifest.xml">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Assets\AboutAssets.txt" />
     <AndroidResource Include="Resources\layout\startLayout.axml">
       <SubType>Designer</SubType>
@@ -206,11 +207,15 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
+    <GoogleServicesJson Include="google-services.json" />
+  </ItemGroup>
+  <ItemGroup>
     <Folder Include="Resources\mipmap-hdpi\" />
     <Folder Include="Resources\mipmap-mdpi\" />
     <Folder Include="Resources\mipmap-xhdpi\" />
     <Folder Include="Resources\mipmap-xxhdpi\" />
     <Folder Include="Resources\mipmap-xxxhdpi\" />
+    <Folder Include="Services\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\LostInLublin.Core\LostInLublin.Core.csproj">
