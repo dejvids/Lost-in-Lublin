@@ -18,6 +18,7 @@
     "LostInLublin": {
       "commandName": "Project",
       "launchBrowser": true,
+      "launchUrl": "/index.html",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
