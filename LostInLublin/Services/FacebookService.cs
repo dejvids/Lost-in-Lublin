@@ -48,7 +48,7 @@ namespace LostInLublin.Services
         public async Task<IEnumerable<PostDto>> GetPostsAsync(string accessToken, string pageId, DateTime createdDate, DateTime minDate)
         {
             var result = await _facebookClient.GetAsync<Posts>(
-                accessToken, pageId,$"fields=full_picture,created_time,message&since={createdDate.ToShortDateString()}&until={minDate.ToShortDateString()}&limit=100");
+                accessToken, pageId,$"fields=full_picture,created_time,message&since={createdDate.ToShortDateString()}&until=now&limit=100");
             if (result == null)
                 return new List<PostDto>();
             var posts = result.Data;

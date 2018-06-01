@@ -1,16 +1,17 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <resources>
-  <style name="PillerTheme" parent="Theme.AppCompat.Light.NoActionBar">
-    <item name="colorPrimary">@color/md_green_500</item>
-    <item name="colorPrimaryDark">@color/md_green_700</item>
-    <item name="colorAccent">@color/md_blue_700</item>
+  <style name="MainTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <item name="colorPrimary">@color/md_deep_orange_500</item>
+    <item name="colorPrimaryDark">@color/md_deep_orange_700</item>
+    <item name="colorAccent">@color/md_grey_800</item>
     <item name="windowActionBar">false</item>
     <item name="android:windowNoTitle">true</item>
     <item name="windowActionModeOverlay">false</item>
+    <item name="android:buttonStyle">@style/ButtonText</item>
   </style>
 
   <style name="NotificationActionText">
-    <item name="android:textColor">@color/md_blue_500</item>
+    <item name="android:textColor">@color/md_grey_800</item>
     <item name="android:textSize">17sp</item>
   </style>
 
@@ -58,8 +59,13 @@
 
   <style name="BorderlessButton">
     <item name="android:textSize">16sp</item>
-    <item name="android:textColor">@color/md_blue_700</item>
+    <item name="android:textColor">@color/md_grey_900</item>
     <item name="android:background">@android:color/white</item>
+  </style>
+  <style name="ButtonText" parent="@android:style/Widget.Button">
+    <item name="android:textColor">@color/md_white_1000</item>
+    <item name="android:background">@color/md_grey_900</item>
+
   </style>
 
 

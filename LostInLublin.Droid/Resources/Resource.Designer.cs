@@ -7040,26 +7040,26 @@ namespace LostInLublin.Droid
 			// aapt resource value: 0x7f020053
 			public const int avd_hide_password = 2130837587;
 			
-			// aapt resource value: 0x7f02006e
-			public const int avd_hide_password_1 = 2130837614;
+			// aapt resource value: 0x7f020071
+			public const int avd_hide_password_1 = 2130837617;
 			
-			// aapt resource value: 0x7f02006f
-			public const int avd_hide_password_2 = 2130837615;
+			// aapt resource value: 0x7f020072
+			public const int avd_hide_password_2 = 2130837618;
 			
-			// aapt resource value: 0x7f020070
-			public const int avd_hide_password_3 = 2130837616;
+			// aapt resource value: 0x7f020073
+			public const int avd_hide_password_3 = 2130837619;
 			
 			// aapt resource value: 0x7f020054
 			public const int avd_show_password = 2130837588;
 			
-			// aapt resource value: 0x7f020071
-			public const int avd_show_password_1 = 2130837617;
+			// aapt resource value: 0x7f020074
+			public const int avd_show_password_1 = 2130837620;
 			
-			// aapt resource value: 0x7f020072
-			public const int avd_show_password_2 = 2130837618;
+			// aapt resource value: 0x7f020075
+			public const int avd_show_password_2 = 2130837621;
 			
-			// aapt resource value: 0x7f020073
-			public const int avd_show_password_3 = 2130837619;
+			// aapt resource value: 0x7f020076
+			public const int avd_show_password_3 = 2130837622;
 			
 			// aapt resource value: 0x7f020055
 			public const int design_bottom_navigation_item_background = 2130837589;
@@ -7083,58 +7083,67 @@ namespace LostInLublin.Droid
 			public const int ic_launcher = 2130837595;
 			
 			// aapt resource value: 0x7f02005c
-			public const int icon64x64 = 2130837596;
+			public const int ico_browser = 2130837596;
 			
 			// aapt resource value: 0x7f02005d
-			public const int navigation_empty_icon = 2130837597;
+			public const int icon64x64 = 2130837597;
 			
 			// aapt resource value: 0x7f02005e
-			public const int notification_action_background = 2130837598;
+			public const int logoIco = 2130837598;
 			
 			// aapt resource value: 0x7f02005f
-			public const int notification_bg = 2130837599;
+			public const int navigation_empty_icon = 2130837599;
 			
 			// aapt resource value: 0x7f020060
-			public const int notification_bg_low = 2130837600;
+			public const int notification_action_background = 2130837600;
 			
 			// aapt resource value: 0x7f020061
-			public const int notification_bg_low_normal = 2130837601;
+			public const int notification_bg = 2130837601;
 			
 			// aapt resource value: 0x7f020062
-			public const int notification_bg_low_pressed = 2130837602;
+			public const int notification_bg_low = 2130837602;
 			
 			// aapt resource value: 0x7f020063
-			public const int notification_bg_normal = 2130837603;
+			public const int notification_bg_low_normal = 2130837603;
 			
 			// aapt resource value: 0x7f020064
-			public const int notification_bg_normal_pressed = 2130837604;
+			public const int notification_bg_low_pressed = 2130837604;
 			
 			// aapt resource value: 0x7f020065
-			public const int notification_icon_background = 2130837605;
-			
-			// aapt resource value: 0x7f02006c
-			public const int notification_template_icon_bg = 2130837612;
-			
-			// aapt resource value: 0x7f02006d
-			public const int notification_template_icon_low_bg = 2130837613;
+			public const int notification_bg_normal = 2130837605;
 			
 			// aapt resource value: 0x7f020066
-			public const int notification_tile_bg = 2130837606;
+			public const int notification_bg_normal_pressed = 2130837606;
 			
 			// aapt resource value: 0x7f020067
-			public const int notify_panel_notification_icon_bg = 2130837607;
+			public const int notification_icon_background = 2130837607;
+			
+			// aapt resource value: 0x7f02006f
+			public const int notification_template_icon_bg = 2130837615;
+			
+			// aapt resource value: 0x7f020070
+			public const int notification_template_icon_low_bg = 2130837616;
 			
 			// aapt resource value: 0x7f020068
-			public const int pill64x64 = 2130837608;
+			public const int notification_tile_bg = 2130837608;
 			
 			// aapt resource value: 0x7f020069
-			public const int place = 2130837609;
+			public const int notify_panel_notification_icon_bg = 2130837609;
 			
 			// aapt resource value: 0x7f02006a
-			public const int tooltip_frame_dark = 2130837610;
+			public const int openBrowser = 2130837610;
 			
 			// aapt resource value: 0x7f02006b
-			public const int tooltip_frame_light = 2130837611;
+			public const int place = 2130837611;
+			
+			// aapt resource value: 0x7f02006c
+			public const int refreshIcon = 2130837612;
+			
+			// aapt resource value: 0x7f02006d
+			public const int tooltip_frame_dark = 2130837613;
+			
+			// aapt resource value: 0x7f02006e
+			public const int tooltip_frame_light = 2130837614;
 			
 			static Drawable()
 			{
@@ -7173,8 +7182,8 @@ namespace LostInLublin.Droid
 			// aapt resource value: 0x7f0a0039
 			public const int SYM = 2131361849;
 			
-			// aapt resource value: 0x7f0a00a5
-			public const int action0 = 2131361957;
+			// aapt resource value: 0x7f0a00a9
+			public const int action0 = 2131361961;
 			
 			// aapt resource value: 0x7f0a007e
 			public const int action_bar = 2131361918;
@@ -7197,17 +7206,17 @@ namespace LostInLublin.Droid
 			// aapt resource value: 0x7f0a005c
 			public const int action_bar_title = 2131361884;
 			
-			// aapt resource value: 0x7f0a00a2
-			public const int action_container = 2131361954;
+			// aapt resource value: 0x7f0a00a6
+			public const int action_container = 2131361958;
 			
 			// aapt resource value: 0x7f0a007f
 			public const int action_context_bar = 2131361919;
 			
-			// aapt resource value: 0x7f0a00a9
-			public const int action_divider = 2131361961;
+			// aapt resource value: 0x7f0a00ad
+			public const int action_divider = 2131361965;
 			
-			// aapt resource value: 0x7f0a00a3
-			public const int action_image = 2131361955;
+			// aapt resource value: 0x7f0a00a7
+			public const int action_image = 2131361959;
 			
 			// aapt resource value: 0x7f0a0003
 			public const int action_menu_divider = 2131361795;
@@ -7224,11 +7233,14 @@ namespace LostInLublin.Droid
 			// aapt resource value: 0x7f0a005e
 			public const int action_mode_close_button = 2131361886;
 			
-			// aapt resource value: 0x7f0a00a4
-			public const int action_text = 2131361956;
+			// aapt resource value: 0x7f0a00c8
+			public const int action_refresh = 2131361992;
 			
-			// aapt resource value: 0x7f0a00b2
-			public const int actions = 2131361970;
+			// aapt resource value: 0x7f0a00a8
+			public const int action_text = 2131361960;
+			
+			// aapt resource value: 0x7f0a00b6
+			public const int actions = 2131361974;
 			
 			// aapt resource value: 0x7f0a005f
 			public const int activity_chooser_view_content = 2131361887;
@@ -7245,8 +7257,8 @@ namespace LostInLublin.Droid
 			// aapt resource value: 0x7f0a003a
 			public const int always = 2131361850;
 			
-			// aapt resource value: 0x7f0a00b6
-			public const int appbar = 2131361974;
+			// aapt resource value: 0x7f0a00c0
+			public const int appbar = 2131361984;
 			
 			// aapt resource value: 0x7f0a0058
 			public const int async = 2131361880;
@@ -7263,17 +7275,20 @@ namespace LostInLublin.Droid
 			// aapt resource value: 0x7f0a003f
 			public const int bottom = 2131361855;
 			
-			// aapt resource value: 0x7f0a00a1
-			public const int bottom_navigation = 2131361953;
+			// aapt resource value: 0x7f0a00a5
+			public const int bottom_navigation = 2131361957;
+			
+			// aapt resource value: 0x7f0a009e
+			public const int btnLink = 2131361950;
 			
 			// aapt resource value: 0x7f0a0065
 			public const int buttonPanel = 2131361893;
 			
-			// aapt resource value: 0x7f0a00a6
-			public const int cancel_action = 2131361958;
+			// aapt resource value: 0x7f0a00aa
+			public const int cancel_action = 2131361962;
 			
-			// aapt resource value: 0x7f0a009b
-			public const int card_view = 2131361947;
+			// aapt resource value: 0x7f0a009f
+			public const int card_view = 2131361951;
 			
 			// aapt resource value: 0x7f0a0047
 			public const int center = 2131361863;
@@ -7287,8 +7302,8 @@ namespace LostInLublin.Droid
 			// aapt resource value: 0x7f0a0075
 			public const int checkbox = 2131361909;
 			
-			// aapt resource value: 0x7f0a00ae
-			public const int chronometer = 2131361966;
+			// aapt resource value: 0x7f0a00b2
+			public const int chronometer = 2131361970;
 			
 			// aapt resource value: 0x7f0a0050
 			public const int clip_horizontal = 2131361872;
@@ -7305,8 +7320,8 @@ namespace LostInLublin.Droid
 			// aapt resource value: 0x7f0a0068
 			public const int contentPanel = 2131361896;
 			
-			// aapt resource value: 0x7f0a00a0
-			public const int content_frame = 2131361952;
+			// aapt resource value: 0x7f0a00a4
+			public const int content_frame = 2131361956;
 			
 			// aapt resource value: 0x7f0a0090
 			public const int coordinator = 2131361936;
@@ -7317,8 +7332,8 @@ namespace LostInLublin.Droid
 			// aapt resource value: 0x7f0a006e
 			public const int customPanel = 2131361902;
 			
-			// aapt resource value: 0x7f0a009e
-			public const int dateTxt = 2131361950;
+			// aapt resource value: 0x7f0a00a2
+			public const int dateTxt = 2131361954;
 			
 			// aapt resource value: 0x7f0a007c
 			public const int decor_content_parent = 2131361916;
@@ -7350,8 +7365,8 @@ namespace LostInLublin.Droid
 			// aapt resource value: 0x7f0a0032
 			public const int end = 2131361842;
 			
-			// aapt resource value: 0x7f0a00b4
-			public const int end_padder = 2131361972;
+			// aapt resource value: 0x7f0a00b8
+			public const int end_padder = 2131361976;
 			
 			// aapt resource value: 0x7f0a0041
 			public const int enterAlways = 2131361857;
@@ -7386,8 +7401,8 @@ namespace LostInLublin.Droid
 			// aapt resource value: 0x7f0a000a
 			public const int ghost_view = 2131361802;
 			
-			// aapt resource value: 0x7f0a00bd
-			public const int holidays = 2131361981;
+			// aapt resource value: 0x7f0a00c7
+			public const int holidays = 2131361991;
 			
 			// aapt resource value: 0x7f0a0005
 			public const int home = 2131361797;
@@ -7398,8 +7413,8 @@ namespace LostInLublin.Droid
 			// aapt resource value: 0x7f0a0064
 			public const int icon = 2131361892;
 			
-			// aapt resource value: 0x7f0a00b3
-			public const int icon_group = 2131361971;
+			// aapt resource value: 0x7f0a00b7
+			public const int icon_group = 2131361975;
 			
 			// aapt resource value: 0x7f0a003c
 			public const int ifRoom = 2131361852;
@@ -7407,14 +7422,20 @@ namespace LostInLublin.Droid
 			// aapt resource value: 0x7f0a0061
 			public const int image = 2131361889;
 			
-			// aapt resource value: 0x7f0a00af
-			public const int info = 2131361967;
+			// aapt resource value: 0x7f0a00ba
+			public const int imgLogo = 2131361978;
+			
+			// aapt resource value: 0x7f0a00b3
+			public const int info = 2131361971;
 			
 			// aapt resource value: 0x7f0a005b
 			public const int italic = 2131361883;
 			
 			// aapt resource value: 0x7f0a0000
 			public const int item_touch_helper_previous_elevation = 2131361792;
+			
+			// aapt resource value: 0x7f0a00bc
+			public const int keywordBx = 2131361980;
 			
 			// aapt resource value: 0x7f0a008e
 			public const int largeLabel = 2131361934;
@@ -7434,26 +7455,32 @@ namespace LostInLublin.Droid
 			// aapt resource value: 0x7f0a0063
 			public const int list_item = 2131361891;
 			
-			// aapt resource value: 0x7f0a00ba
-			public const int masked = 2131361978;
+			// aapt resource value: 0x7f0a00bb
+			public const int locationBx = 2131361979;
 			
-			// aapt resource value: 0x7f0a00a8
-			public const int media_actions = 2131361960;
+			// aapt resource value: 0x7f0a00c4
+			public const int masked = 2131361988;
 			
-			// aapt resource value: 0x7f0a00bc
-			public const int medical_card = 2131361980;
+			// aapt resource value: 0x7f0a00ac
+			public const int media_actions = 2131361964;
 			
-			// aapt resource value: 0x7f0a00b8
-			public const int message = 2131361976;
+			// aapt resource value: 0x7f0a00c6
+			public const int medical_card = 2131361990;
 			
-			// aapt resource value: 0x7f0a009d
-			public const int messageTxt = 2131361949;
+			// aapt resource value: 0x7f0a00c2
+			public const int message = 2131361986;
+			
+			// aapt resource value: 0x7f0a00a1
+			public const int messageTxt = 2131361953;
 			
 			// aapt resource value: 0x7f0a0033
 			public const int middle = 2131361843;
 			
 			// aapt resource value: 0x7f0a0055
 			public const int mini = 2131361877;
+			
+			// aapt resource value: 0x7f0a009c
+			public const int msg = 2131361948;
 			
 			// aapt resource value: 0x7f0a002a
 			public const int multiply = 2131361834;
@@ -7470,14 +7497,14 @@ namespace LostInLublin.Droid
 			// aapt resource value: 0x7f0a0020
 			public const int normal = 2131361824;
 			
-			// aapt resource value: 0x7f0a00b1
-			public const int notification_background = 2131361969;
+			// aapt resource value: 0x7f0a00b5
+			public const int notification_background = 2131361973;
 			
-			// aapt resource value: 0x7f0a00ab
-			public const int notification_main_column = 2131361963;
+			// aapt resource value: 0x7f0a00af
+			public const int notification_main_column = 2131361967;
 			
-			// aapt resource value: 0x7f0a00aa
-			public const int notification_main_column_container = 2131361962;
+			// aapt resource value: 0x7f0a00ae
+			public const int notification_main_column_container = 2131361966;
 			
 			// aapt resource value: 0x7f0a004e
 			public const int parallax = 2131361870;
@@ -7488,11 +7515,14 @@ namespace LostInLublin.Droid
 			// aapt resource value: 0x7f0a000b
 			public const int parent_matrix = 2131361803;
 			
+			// aapt resource value: 0x7f0a009b
+			public const int pic = 2131361947;
+			
 			// aapt resource value: 0x7f0a004f
 			public const int pin = 2131361871;
 			
-			// aapt resource value: 0x7f0a00b5
-			public const int postsLstv = 2131361973;
+			// aapt resource value: 0x7f0a00b9
+			public const int postsLstv = 2131361977;
 			
 			// aapt resource value: 0x7f0a0006
 			public const int progress_circular = 2131361798;
@@ -7506,11 +7536,11 @@ namespace LostInLublin.Droid
 			// aapt resource value: 0x7f0a004c
 			public const int right = 2131361868;
 			
-			// aapt resource value: 0x7f0a00b0
-			public const int right_icon = 2131361968;
+			// aapt resource value: 0x7f0a00b4
+			public const int right_icon = 2131361972;
 			
-			// aapt resource value: 0x7f0a00ac
-			public const int right_side = 2131361964;
+			// aapt resource value: 0x7f0a00b0
+			public const int right_side = 2131361968;
 			
 			// aapt resource value: 0x7f0a000c
 			public const int save_image_matrix = 2131361804;
@@ -7538,6 +7568,9 @@ namespace LostInLublin.Droid
 			
 			// aapt resource value: 0x7f0a0057
 			public const int scrollable = 2131361879;
+			
+			// aapt resource value: 0x7f0a00bf
+			public const int searchBtn = 2131361983;
 			
 			// aapt resource value: 0x7f0a0082
 			public const int search_badge = 2131361922;
@@ -7614,8 +7647,8 @@ namespace LostInLublin.Droid
 			// aapt resource value: 0x7f0a004d
 			public const int start = 2131361869;
 			
-			// aapt resource value: 0x7f0a00a7
-			public const int status_bar_latest_event_content = 2131361959;
+			// aapt resource value: 0x7f0a00ab
+			public const int status_bar_latest_event_content = 2131361963;
 			
 			// aapt resource value: 0x7f0a0078
 			public const int submenuarrow = 2131361912;
@@ -7650,11 +7683,11 @@ namespace LostInLublin.Droid
 			// aapt resource value: 0x7f0a0015
 			public const int textinput_error = 2131361813;
 			
-			// aapt resource value: 0x7f0a009c
-			public const int thumbnail = 2131361948;
+			// aapt resource value: 0x7f0a00a0
+			public const int thumbnail = 2131361952;
 			
-			// aapt resource value: 0x7f0a00ad
-			public const int time = 2131361965;
+			// aapt resource value: 0x7f0a00b1
+			public const int time = 2131361969;
 			
 			// aapt resource value: 0x7f0a001c
 			public const int title = 2131361820;
@@ -7665,11 +7698,11 @@ namespace LostInLublin.Droid
 			// aapt resource value: 0x7f0a0071
 			public const int title_template = 2131361905;
 			
-			// aapt resource value: 0x7f0a00b7
-			public const int toolbar = 2131361975;
+			// aapt resource value: 0x7f0a00c1
+			public const int toolbar = 2131361985;
 			
-			// aapt resource value: 0x7f0a009f
-			public const int toolbarLayout = 2131361951;
+			// aapt resource value: 0x7f0a00a3
+			public const int toolbarLayout = 2131361955;
 			
 			// aapt resource value: 0x7f0a0040
 			public const int top = 2131361856;
@@ -7695,14 +7728,23 @@ namespace LostInLublin.Droid
 			// aapt resource value: 0x7f0a0013
 			public const int transition_transform = 2131361811;
 			
+			// aapt resource value: 0x7f0a009d
+			public const int txt_created = 2131361949;
+			
+			// aapt resource value: 0x7f0a00bd
+			public const int txt_from = 2131361981;
+			
+			// aapt resource value: 0x7f0a00be
+			public const int txt_to = 2131361982;
+			
 			// aapt resource value: 0x7f0a002f
 			public const int uniform = 2131361839;
 			
 			// aapt resource value: 0x7f0a0009
 			public const int up = 2131361801;
 			
-			// aapt resource value: 0x7f0a00bb
-			public const int upcoming = 2131361979;
+			// aapt resource value: 0x7f0a00c5
+			public const int upcoming = 2131361989;
 			
 			// aapt resource value: 0x7f0a0028
 			public const int useLogo = 2131361832;
@@ -7710,8 +7752,8 @@ namespace LostInLublin.Droid
 			// aapt resource value: 0x7f0a0016
 			public const int view_offset_helper = 2131361814;
 			
-			// aapt resource value: 0x7f0a00b9
-			public const int visible = 2131361977;
+			// aapt resource value: 0x7f0a00c3
+			public const int visible = 2131361987;
 			
 			// aapt resource value: 0x7f0a003e
 			public const int withText = 2131361854;
@@ -7991,6 +8033,9 @@ namespace LostInLublin.Droid
 			
 			// aapt resource value: 0x7f0e0000
 			public const int bottom_navigation = 2131623936;
+			
+			// aapt resource value: 0x7f0e0001
+			public const int my_menu = 2131623937;
 			
 			static Menu()
 			{
@@ -8687,6 +8732,9 @@ namespace LostInLublin.Droid
 			// aapt resource value: 0x7f0b018d
 			public const int BorderlessButton = 2131427725;
 			
+			// aapt resource value: 0x7f0b018e
+			public const int ButtonText = 2131427726;
+			
 			// aapt resource value: 0x7f0b0000
 			public const int CardView = 2131427328;
 			
@@ -8705,6 +8753,9 @@ namespace LostInLublin.Droid
 			// aapt resource value: 0x7f0b0188
 			public const int ListSecondaryText = 2131427720;
 			
+			// aapt resource value: 0x7f0b0184
+			public const int MainTheme = 2131427716;
+			
 			// aapt resource value: 0x7f0b0185
 			public const int NotificationActionText = 2131427717;
 			
@@ -8719,9 +8770,6 @@ namespace LostInLublin.Droid
 			
 			// aapt resource value: 0x7f0b018a
 			public const int NotificationTitle = 2131427722;
-			
-			// aapt resource value: 0x7f0b0184
-			public const int PillerTheme = 2131427716;
 			
 			// aapt resource value: 0x7f0b0022
 			public const int Platform_AppCompat = 2131427362;

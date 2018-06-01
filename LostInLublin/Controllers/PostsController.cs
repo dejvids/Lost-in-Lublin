@@ -6,7 +6,10 @@ using LostInLublin.Models;
 using LostInLublin.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+
 using Microsoft.Extensions.Configuration;
+
+using System.Diagnostics;
 
 namespace LostInLublin.Controllers
 {
@@ -24,23 +27,33 @@ namespace LostInLublin.Controllers
             _configuration = configuration;
             _facebookService = new FacebookService(new FacebookClient());
         }
-     
-       [HttpGet]
+
+        [HttpGet]
         public async Task<IActionResult> Get()
         {
+            try
+            {
+                await GetPostsAsync();
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
+
             var posts = await _dbContext.Posts.ToListAsync();
             Lastdate = posts.Max(p => p.CreatedDate);
+
             this._posts = posts;
             return Ok(posts.OrderByDescending(x => x.CreatedDate));
            // return Ok(posts);
         }
 
        
-        public async  Task<IEnumerable<PostDto>> GetPosts()
+        public async  Task<IEnumerable<PostDto>> GetPostsAsync()
         {
-              var createdDate = _dbContext.Posts.Max(p => p.CreatedDate);
+            var createdDate =  _dbContext.Posts.Max(p => p.CreatedDate);
             var minDate = DateTime.Now;
-            IEnumerable<Services.PostDto> posts = new List<Services.PostDto>();
+            IEnumerable<PostDto> posts = new List<Services.PostDto>();
             var accountTask = _facebookService.GetAccountAsync(FacebookSettings.AccessToken);
             Task.WaitAll(accountTask);
             var account = accountTask.Result;
@@ -48,7 +61,7 @@ namespace LostInLublin.Controllers
             {
                 foreach(var endpoint in FacebookSettings.Endpoints)
                 {
-                    posts = posts.Concat(_facebookService.GetPostsAsync(_configuration.GetSection("AccessToken").GetValue<string>("UserTOken"), endpoint.Id, createdDate, minDate.AddDays(1)).Result);
+                    posts = posts.Concat(await _facebookService.GetPostsAsync(_configuration.GetSection("AccessToken").GetValue<string>("UserTOken"), endpoint.Id, createdDate, minDate.AddDays(1)));
                 }
                 //var postsTask = facebookService.GetPostsAsync(FacebookSettings.AccessToken, FacebookSettings.SpottedLublin, createdDate, minDate);
                 //Task.WaitAll(postsTask);
@@ -70,7 +83,7 @@ namespace LostInLublin.Controllers
                     Message = post.Message,
                     CreatedDate = post.CreatedTimeDate,
                     Picture = post.Full_Picture,
-                    Url = post.Url
+                    URL = post.Url
                 });
                 _dbContext.SaveChanges();
             }
@@ -94,7 +107,7 @@ namespace LostInLublin.Controllers
                 Message = post.Message,
                 Picture = post.Full_Picture,
                 CreatedDate = DateTime.Now,
-                Url = post.Url
+                URL = post.Url
             });
             _dbContext.SaveChanges();
         }

@@ -9,7 +9,7 @@ namespace LostInLublin.Models
     {
         public string Id { get; set; }
         public string Message { get; set; }
-        public string Url { get; set; }
+        public string URL { get; set; }
         public DateTime CreatedDate { get; set; }
         public string Picture { get; set; }
     }

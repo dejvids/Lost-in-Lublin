@@ -2,7 +2,7 @@
 using Android.App;
 using Android.OS;
 using Android.Runtime;
-using Toolbar=Android.Support.V7.Widget.Toolbar;
+using Toolbar = Android.Support.V7.Widget.Toolbar;
 using Android.Views;
 using LostInLublin.Core.ViewModels;
 using MvvmCross.Binding.BindingContext;
@@ -19,6 +19,7 @@ using Android.Util;
 using MvvmCross.Views;
 using Android.Content.PM;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace LostInLublin.Droid.Views
 {
@@ -49,13 +50,37 @@ namespace LostInLublin.Droid.Views
             var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
             SetSupportActionBar(toolbar);
             var view = this.BindingInflate(Resource.Layout.postsLayout, null);
-           // postsList = view.FindViewById<MvxListView>(Resource.Id.postsLstv);
+            // postsList = view.FindViewById<MvxListView>(Resource.Id.postsLstv);
             // postsList.ItemTemplateId = Resource.Layout.postItem;
             // postsList.Adapter = new PostsAdapter(this.ApplicationContext, (IMvxAndroidBindingContext)this.BindingContext);
             // postsList.ItemsSource = new List<Post> { new Post { Message = "Znaleziono" }, new Post { Message = "szukaj" } };
             // SetBindings();
             var p = this.ViewModel.GetPosts();
         }
+
+        public override bool OnCreateOptionsMenu(IMenu menu)
+        {
+            MenuInflater inflater = this.MenuInflater;
+            inflater.Inflate(Resource.Menu.my_menu, menu);
+            return true;
+
+        }
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            switch (item.ItemId)
+            {
+                case 1:
+                    {
+                        Task.Run(() =>
+                          this.ViewModel.GetPosts()
+                        );
+                        Task.WaitAll();
+                        return true;
+                    }
+            }
+            return base.OnOptionsItemSelected(item);
+        }
+
 
         private void SetBindings()
         {

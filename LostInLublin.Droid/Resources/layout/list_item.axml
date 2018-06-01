@@ -18,8 +18,8 @@
             <ffimageloading.cross.MvxCachedImageView
                 android:id="@+id/thumbnail"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/album_cover_height"
-                android:scaleType="fitXY"
+                android:layout_height="wrap_content"
+                android:scaleType="center"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 local:MvxBind="ImagePath Picture, Converter=PictureConverter; ErrorPlaceholderImagePath '@drawable/place.png'; LoadingPlaceholderImagePath  '@drawable/place.png'" />
             <TextView

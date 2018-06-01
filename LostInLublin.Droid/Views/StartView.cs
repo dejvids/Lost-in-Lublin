@@ -11,20 +11,44 @@ using Android.Util;
 using Android.Views;
 using Android.Widget;
 using Firebase.Iid;
+using LostInLublin.Core.ViewModels;
+using MvvmCross.Binding.BindingContext;
 using MvvmCross.Droid.Support.V7.AppCompat;
 
 namespace LostInLublin.Droid.Views
 {
     [Activity(MainLauncher = true)]
 
-    public class StartView : MvxAppCompatActivity
+    public class StartView : MvxAppCompatActivity<StartViewModel>
     {
         public const string TAG = "MainActivity";
+        Button searchBtn;
+        EditText locationTxt;
+        EditText keyWordTxt;
+        EditText startDate;
+        EditText endDate;
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
             SetContentView(Resource.Layout.startLayout);
 
+            locationTxt = FindViewById<EditText>(Resource.Id.locationBx);
+            keyWordTxt = FindViewById<EditText>(Resource.Id.keywordBx);
+            startDate = FindViewById<EditText>(Resource.Id.txt_from);
+            endDate = FindViewById<EditText>(Resource.Id.txt_to);
+            searchBtn = FindViewById<Button>(Resource.Id.searchBtn);
+
+            startDate.Click += (s, e) =>
+             {
+                 DatePickerFragment frag = DatePickerFragment.NewInstance(delegate (DateTime time)
+                 {
+                     startDate.Text = time.ToLongDateString();
+                     this.ViewModel.StartDate = time;
+                 });
+                 frag.Show(FragmentManager, DatePickerFragment.TAG);
+             };
+
+            SetBindings();
             if (Intent.Extras != null)
             {
                 foreach (var key in Intent.Extras.KeySet())
@@ -45,6 +69,16 @@ namespace LostInLublin.Droid.Views
             //});
         }
 
+        private void SetBindings()
+        {
+            var bindingSet = this.CreateBindingSet<StartView, StartViewModel>();
+
+            bindingSet.Bind(searchBtn)
+                .For(nameof(View.Click))
+                .To(vm => vm.SearchCmd);
+
+            bindingSet.Apply();
+        }
     }
 
 }
