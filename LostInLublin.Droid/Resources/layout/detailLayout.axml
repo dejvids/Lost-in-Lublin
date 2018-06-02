@@ -3,41 +3,53 @@
     xmlns:local="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <ffimageloading.cross.MvxCachedImageView
-        android:id="@+id/pic"
+    <include
+        layout="@layout/toolbar" />
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:scaleType="fitXY"
-        android:adjustViewBounds="true"
-        local:MvxBind="ImagePath Picture" />
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_margin="10dp"
-        android:layout_below="@id/pic">
-        <TextView
-            android:id="@+id/msg"
-            android:layout_height="wrap_content"
+        android:layout_height="match_parent">
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:textSize="14sp"
-            local:MvxBind="Text Message" />
-        <TextView
-            android:id="@+id/txt_created"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:text="Dodano: 18:05:2018" />
-        <Button
-            android:id="@+id/btnLink"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="?attr/colorAccent"
-            android:textSize="16sp"
-            android:padding="10dp"
-            android:layout_below="@id/msg"
-            android:drawableRight="@drawable/ico_browser"
-            android:text="Otwórz link" />
-    </LinearLayout>
+            android:layout_height="wrap_content">
+            <ffimageloading.cross.MvxCachedImageView
+                android:id="@+id/pic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:scaleType="fitXY"
+                android:adjustViewBounds="true"
+                local:MvxBind="ImagePath Picture" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="10dp"
+                android:layout_below="@id/pic">
+                <TextView
+                    android:id="@+id/msg"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:textSize="14sp"
+                    local:MvxBind="Text Message" />
+                <TextView
+                    android:id="@+id/txt_created"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="Dodano: 18:05:2018" />
+                <Button
+                    android:id="@+id/btnLink"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/colorAccent"
+                    android:layout_marginTop="5dp"
+                    android:textSize="16sp"
+                    android:padding="10dp"
+                    android:layout_below="@id/msg"
+                    android:drawableRight="@drawable/ico_browser"
+                    android:text="Otwórz link   " />
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
 </RelativeLayout>

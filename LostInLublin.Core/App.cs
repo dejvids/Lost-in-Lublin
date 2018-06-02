@@ -18,7 +18,7 @@ namespace LostInLublin.Core
                 .EndingWith("Service")
                 .AsInterfaces()
                 .RegisterAsLazySingleton();
-            RegisterAppStart<PostsViewModel>();
+            RegisterAppStart<StartViewModel>();
 
         }
 

@@ -13,6 +13,7 @@ using LostInLublin.Core.ViewModels;
 using MvvmCross.Droid.Support.V7.AppCompat;
 using MvvmCross.Platforms.Android.Presenters.Attributes;
 using MvvmCross.Binding.BindingContext;
+using LostInLublin.Core.Converters;
 
 namespace LostInLublin.Droid.Views
 {
@@ -30,6 +31,8 @@ namespace LostInLublin.Droid.Views
             var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
 
             SetSupportActionBar(toolbar);
+            SupportActionBar.SetDisplayHomeAsUpEnabled(true);
+            SupportActionBar.SetDisplayShowHomeEnabled(true);
             btnLink = FindViewById<Button>(Resource.Id.btnLink);
             txtCreated = FindViewById<TextView>(Resource.Id.txt_created);
 
@@ -48,9 +51,16 @@ namespace LostInLublin.Droid.Views
 
             bindingSet.Bind(txtCreated)
                 .For(v => v.Text)
-                .To(vm => vm.Created);
+                .To(vm => vm.Created)
+                .WithConversion(new DateCoverter());
 
             bindingSet.Apply();
+        }
+
+        public override bool OnSupportNavigateUp()
+        {
+            OnBackPressed();
+            return true;
         }
     }
 }

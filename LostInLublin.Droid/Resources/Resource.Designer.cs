@@ -7040,26 +7040,26 @@ namespace LostInLublin.Droid
 			// aapt resource value: 0x7f020053
 			public const int avd_hide_password = 2130837587;
 			
-			// aapt resource value: 0x7f020071
-			public const int avd_hide_password_1 = 2130837617;
-			
-			// aapt resource value: 0x7f020072
-			public const int avd_hide_password_2 = 2130837618;
-			
 			// aapt resource value: 0x7f020073
-			public const int avd_hide_password_3 = 2130837619;
+			public const int avd_hide_password_1 = 2130837619;
+			
+			// aapt resource value: 0x7f020074
+			public const int avd_hide_password_2 = 2130837620;
+			
+			// aapt resource value: 0x7f020075
+			public const int avd_hide_password_3 = 2130837621;
 			
 			// aapt resource value: 0x7f020054
 			public const int avd_show_password = 2130837588;
 			
-			// aapt resource value: 0x7f020074
-			public const int avd_show_password_1 = 2130837620;
-			
-			// aapt resource value: 0x7f020075
-			public const int avd_show_password_2 = 2130837621;
-			
 			// aapt resource value: 0x7f020076
-			public const int avd_show_password_3 = 2130837622;
+			public const int avd_show_password_1 = 2130837622;
+			
+			// aapt resource value: 0x7f020077
+			public const int avd_show_password_2 = 2130837623;
+			
+			// aapt resource value: 0x7f020078
+			public const int avd_show_password_3 = 2130837624;
 			
 			// aapt resource value: 0x7f020055
 			public const int design_bottom_navigation_item_background = 2130837589;
@@ -7089,61 +7089,67 @@ namespace LostInLublin.Droid
 			public const int icon64x64 = 2130837597;
 			
 			// aapt resource value: 0x7f02005e
-			public const int logoIco = 2130837598;
+			public const int logo_500x500 = 2130837598;
 			
 			// aapt resource value: 0x7f02005f
-			public const int navigation_empty_icon = 2130837599;
+			public const int logoIco = 2130837599;
 			
 			// aapt resource value: 0x7f020060
-			public const int notification_action_background = 2130837600;
+			public const int logoIco_white = 2130837600;
 			
 			// aapt resource value: 0x7f020061
-			public const int notification_bg = 2130837601;
+			public const int navigation_empty_icon = 2130837601;
 			
 			// aapt resource value: 0x7f020062
-			public const int notification_bg_low = 2130837602;
+			public const int notification_action_background = 2130837602;
 			
 			// aapt resource value: 0x7f020063
-			public const int notification_bg_low_normal = 2130837603;
+			public const int notification_bg = 2130837603;
 			
 			// aapt resource value: 0x7f020064
-			public const int notification_bg_low_pressed = 2130837604;
+			public const int notification_bg_low = 2130837604;
 			
 			// aapt resource value: 0x7f020065
-			public const int notification_bg_normal = 2130837605;
+			public const int notification_bg_low_normal = 2130837605;
 			
 			// aapt resource value: 0x7f020066
-			public const int notification_bg_normal_pressed = 2130837606;
+			public const int notification_bg_low_pressed = 2130837606;
 			
 			// aapt resource value: 0x7f020067
-			public const int notification_icon_background = 2130837607;
-			
-			// aapt resource value: 0x7f02006f
-			public const int notification_template_icon_bg = 2130837615;
-			
-			// aapt resource value: 0x7f020070
-			public const int notification_template_icon_low_bg = 2130837616;
+			public const int notification_bg_normal = 2130837607;
 			
 			// aapt resource value: 0x7f020068
-			public const int notification_tile_bg = 2130837608;
+			public const int notification_bg_normal_pressed = 2130837608;
 			
 			// aapt resource value: 0x7f020069
-			public const int notify_panel_notification_icon_bg = 2130837609;
+			public const int notification_icon_background = 2130837609;
+			
+			// aapt resource value: 0x7f020071
+			public const int notification_template_icon_bg = 2130837617;
+			
+			// aapt resource value: 0x7f020072
+			public const int notification_template_icon_low_bg = 2130837618;
 			
 			// aapt resource value: 0x7f02006a
-			public const int openBrowser = 2130837610;
+			public const int notification_tile_bg = 2130837610;
 			
 			// aapt resource value: 0x7f02006b
-			public const int place = 2130837611;
+			public const int notify_panel_notification_icon_bg = 2130837611;
 			
 			// aapt resource value: 0x7f02006c
-			public const int refreshIcon = 2130837612;
+			public const int openBrowser = 2130837612;
 			
 			// aapt resource value: 0x7f02006d
-			public const int tooltip_frame_dark = 2130837613;
+			public const int place = 2130837613;
 			
 			// aapt resource value: 0x7f02006e
-			public const int tooltip_frame_light = 2130837614;
+			public const int refreshIcon = 2130837614;
+			
+			// aapt resource value: 0x7f02006f
+			public const int tooltip_frame_dark = 2130837615;
+			
+			// aapt resource value: 0x7f020070
+			public const int tooltip_frame_light = 2130837616;
 			
 			static Drawable()
 			{
@@ -7184,6 +7190,9 @@ namespace LostInLublin.Droid
 			
 			// aapt resource value: 0x7f0a00a9
 			public const int action0 = 2131361961;
+			
+			// aapt resource value: 0x7f0a00cc
+			public const int action_add = 2131361996;
 			
 			// aapt resource value: 0x7f0a007e
 			public const int action_bar = 2131361918;
@@ -7233,8 +7242,8 @@ namespace LostInLublin.Droid
 			// aapt resource value: 0x7f0a005e
 			public const int action_mode_close_button = 2131361886;
 			
-			// aapt resource value: 0x7f0a00c8
-			public const int action_refresh = 2131361992;
+			// aapt resource value: 0x7f0a00cb
+			public const int action_refresh = 2131361995;
 			
 			// aapt resource value: 0x7f0a00a8
 			public const int action_text = 2131361960;
@@ -7257,8 +7266,8 @@ namespace LostInLublin.Droid
 			// aapt resource value: 0x7f0a003a
 			public const int always = 2131361850;
 			
-			// aapt resource value: 0x7f0a00c0
-			public const int appbar = 2131361984;
+			// aapt resource value: 0x7f0a00c3
+			public const int appbar = 2131361987;
 			
 			// aapt resource value: 0x7f0a0058
 			public const int async = 2131361880;
@@ -7401,8 +7410,8 @@ namespace LostInLublin.Droid
 			// aapt resource value: 0x7f0a000a
 			public const int ghost_view = 2131361802;
 			
-			// aapt resource value: 0x7f0a00c7
-			public const int holidays = 2131361991;
+			// aapt resource value: 0x7f0a00ca
+			public const int holidays = 2131361994;
 			
 			// aapt resource value: 0x7f0a0005
 			public const int home = 2131361797;
@@ -7423,7 +7432,10 @@ namespace LostInLublin.Droid
 			public const int image = 2131361889;
 			
 			// aapt resource value: 0x7f0a00ba
-			public const int imgLogo = 2131361978;
+			public const int imageView2 = 2131361978;
+			
+			// aapt resource value: 0x7f0a00bc
+			public const int imgLogo = 2131361980;
 			
 			// aapt resource value: 0x7f0a00b3
 			public const int info = 2131361971;
@@ -7434,8 +7446,8 @@ namespace LostInLublin.Droid
 			// aapt resource value: 0x7f0a0000
 			public const int item_touch_helper_previous_elevation = 2131361792;
 			
-			// aapt resource value: 0x7f0a00bc
-			public const int keywordBx = 2131361980;
+			// aapt resource value: 0x7f0a00bf
+			public const int keywordBx = 2131361983;
 			
 			// aapt resource value: 0x7f0a008e
 			public const int largeLabel = 2131361934;
@@ -7455,20 +7467,23 @@ namespace LostInLublin.Droid
 			// aapt resource value: 0x7f0a0063
 			public const int list_item = 2131361891;
 			
-			// aapt resource value: 0x7f0a00bb
-			public const int locationBx = 2131361979;
+			// aapt resource value: 0x7f0a00bd
+			public const int locationBx = 2131361981;
 			
-			// aapt resource value: 0x7f0a00c4
-			public const int masked = 2131361988;
+			// aapt resource value: 0x7f0a00be
+			public const int location_btn = 2131361982;
+			
+			// aapt resource value: 0x7f0a00c7
+			public const int masked = 2131361991;
 			
 			// aapt resource value: 0x7f0a00ac
 			public const int media_actions = 2131361964;
 			
-			// aapt resource value: 0x7f0a00c6
-			public const int medical_card = 2131361990;
+			// aapt resource value: 0x7f0a00c9
+			public const int medical_card = 2131361993;
 			
-			// aapt resource value: 0x7f0a00c2
-			public const int message = 2131361986;
+			// aapt resource value: 0x7f0a00c5
+			public const int message = 2131361989;
 			
 			// aapt resource value: 0x7f0a00a1
 			public const int messageTxt = 2131361953;
@@ -7517,6 +7532,9 @@ namespace LostInLublin.Droid
 			
 			// aapt resource value: 0x7f0a009b
 			public const int pic = 2131361947;
+			
+			// aapt resource value: 0x7f0a00bb
+			public const int pillertext = 2131361979;
 			
 			// aapt resource value: 0x7f0a004f
 			public const int pin = 2131361871;
@@ -7569,8 +7587,8 @@ namespace LostInLublin.Droid
 			// aapt resource value: 0x7f0a0057
 			public const int scrollable = 2131361879;
 			
-			// aapt resource value: 0x7f0a00bf
-			public const int searchBtn = 2131361983;
+			// aapt resource value: 0x7f0a00c2
+			public const int searchBtn = 2131361986;
 			
 			// aapt resource value: 0x7f0a0082
 			public const int search_badge = 2131361922;
@@ -7698,8 +7716,8 @@ namespace LostInLublin.Droid
 			// aapt resource value: 0x7f0a0071
 			public const int title_template = 2131361905;
 			
-			// aapt resource value: 0x7f0a00c1
-			public const int toolbar = 2131361985;
+			// aapt resource value: 0x7f0a00c4
+			public const int toolbar = 2131361988;
 			
 			// aapt resource value: 0x7f0a00a3
 			public const int toolbarLayout = 2131361955;
@@ -7731,11 +7749,11 @@ namespace LostInLublin.Droid
 			// aapt resource value: 0x7f0a009d
 			public const int txt_created = 2131361949;
 			
-			// aapt resource value: 0x7f0a00bd
-			public const int txt_from = 2131361981;
+			// aapt resource value: 0x7f0a00c0
+			public const int txt_from = 2131361984;
 			
-			// aapt resource value: 0x7f0a00be
-			public const int txt_to = 2131361982;
+			// aapt resource value: 0x7f0a00c1
+			public const int txt_to = 2131361985;
 			
 			// aapt resource value: 0x7f0a002f
 			public const int uniform = 2131361839;
@@ -7743,8 +7761,8 @@ namespace LostInLublin.Droid
 			// aapt resource value: 0x7f0a0009
 			public const int up = 2131361801;
 			
-			// aapt resource value: 0x7f0a00c5
-			public const int upcoming = 2131361989;
+			// aapt resource value: 0x7f0a00c8
+			public const int upcoming = 2131361992;
 			
 			// aapt resource value: 0x7f0a0028
 			public const int useLogo = 2131361832;
@@ -7752,8 +7770,8 @@ namespace LostInLublin.Droid
 			// aapt resource value: 0x7f0a0016
 			public const int view_offset_helper = 2131361814;
 			
-			// aapt resource value: 0x7f0a00c3
-			public const int visible = 2131361987;
+			// aapt resource value: 0x7f0a00c6
+			public const int visible = 2131361990;
 			
 			// aapt resource value: 0x7f0a003e
 			public const int withText = 2131361854;
@@ -8007,16 +8025,19 @@ namespace LostInLublin.Droid
 			public const int select_dialog_singlechoice_material = 2130903101;
 			
 			// aapt resource value: 0x7f03003e
-			public const int startLayout = 2130903102;
+			public const int SplashScreen = 2130903102;
 			
 			// aapt resource value: 0x7f03003f
-			public const int support_simple_spinner_dropdown_item = 2130903103;
+			public const int startLayout = 2130903103;
 			
 			// aapt resource value: 0x7f030040
-			public const int toolbar = 2130903104;
+			public const int support_simple_spinner_dropdown_item = 2130903104;
 			
 			// aapt resource value: 0x7f030041
-			public const int tooltip = 2130903105;
+			public const int toolbar = 2130903105;
+			
+			// aapt resource value: 0x7f030042
+			public const int tooltip = 2130903106;
 			
 			static Layout()
 			{
@@ -8729,11 +8750,11 @@ namespace LostInLublin.Droid
 			// aapt resource value: 0x7f0b0165
 			public const int Base_Widget_Design_TabLayout = 2131427685;
 			
-			// aapt resource value: 0x7f0b018d
-			public const int BorderlessButton = 2131427725;
-			
 			// aapt resource value: 0x7f0b018e
-			public const int ButtonText = 2131427726;
+			public const int BorderlessButton = 2131427726;
+			
+			// aapt resource value: 0x7f0b018f
+			public const int ButtonText = 2131427727;
 			
 			// aapt resource value: 0x7f0b0000
 			public const int CardView = 2131427328;
@@ -8744,32 +8765,32 @@ namespace LostInLublin.Droid
 			// aapt resource value: 0x7f0b0003
 			public const int CardView_Light = 2131427331;
 			
-			// aapt resource value: 0x7f0b018c
-			public const int DialogTitle = 2131427724;
-			
-			// aapt resource value: 0x7f0b0186
-			public const int ListPrimaryText = 2131427718;
-			
-			// aapt resource value: 0x7f0b0188
-			public const int ListSecondaryText = 2131427720;
-			
-			// aapt resource value: 0x7f0b0184
-			public const int MainTheme = 2131427716;
-			
-			// aapt resource value: 0x7f0b0185
-			public const int NotificationActionText = 2131427717;
-			
-			// aapt resource value: 0x7f0b018b
-			public const int NotificationDesc = 2131427723;
+			// aapt resource value: 0x7f0b018d
+			public const int DialogTitle = 2131427725;
 			
 			// aapt resource value: 0x7f0b0187
-			public const int NotificationTextMedium = 2131427719;
+			public const int ListPrimaryText = 2131427719;
 			
 			// aapt resource value: 0x7f0b0189
-			public const int NotificationTextSmall = 2131427721;
+			public const int ListSecondaryText = 2131427721;
+			
+			// aapt resource value: 0x7f0b0185
+			public const int MainTheme = 2131427717;
+			
+			// aapt resource value: 0x7f0b0186
+			public const int NotificationActionText = 2131427718;
+			
+			// aapt resource value: 0x7f0b018c
+			public const int NotificationDesc = 2131427724;
+			
+			// aapt resource value: 0x7f0b0188
+			public const int NotificationTextMedium = 2131427720;
 			
 			// aapt resource value: 0x7f0b018a
-			public const int NotificationTitle = 2131427722;
+			public const int NotificationTextSmall = 2131427722;
+			
+			// aapt resource value: 0x7f0b018b
+			public const int NotificationTitle = 2131427723;
 			
 			// aapt resource value: 0x7f0b0022
 			public const int Platform_AppCompat = 2131427362;
@@ -9139,6 +9160,9 @@ namespace LostInLublin.Droid
 			
 			// aapt resource value: 0x7f0b0172
 			public const int Theme_Design_NoActionBar = 2131427698;
+			
+			// aapt resource value: 0x7f0b0184
+			public const int Theme_Splash = 2131427716;
 			
 			// aapt resource value: 0x7f0b010b
 			public const int ThemeOverlay_AppCompat = 2131427595;

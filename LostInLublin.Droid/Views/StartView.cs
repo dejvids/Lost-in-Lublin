@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Android.App;
 using Android.Content;
+using Android.Locations;
 using Android.OS;
 using Android.Runtime;
 using Android.Util;
@@ -17,7 +18,7 @@ using MvvmCross.Droid.Support.V7.AppCompat;
 
 namespace LostInLublin.Droid.Views
 {
-    [Activity(MainLauncher = true)]
+    [Activity]
 
     public class StartView : MvxAppCompatActivity<StartViewModel>
     {
@@ -27,10 +28,18 @@ namespace LostInLublin.Droid.Views
         EditText keyWordTxt;
         EditText startDate;
         EditText endDate;
+
+        Geocoder geocoder;
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
             SetContentView(Resource.Layout.startLayout);
+            geocoder = new Geocoder(this.ApplicationContext);
+            var addresses = geocoder.GetFromLocation(ViewModel.Lat, ViewModel.Long, 1);
+            if(addresses.Count > 0)
+            {
+                locationTxt.Text = addresses[0].Locality;
+            }
 
             locationTxt = FindViewById<EditText>(Resource.Id.locationBx);
             keyWordTxt = FindViewById<EditText>(Resource.Id.keywordBx);

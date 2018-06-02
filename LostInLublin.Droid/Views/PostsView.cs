@@ -48,6 +48,7 @@ namespace LostInLublin.Droid.Views
             }
             SetContentView(Resource.Layout.postsLayout);
             var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
+            toolbar.SetTitleTextColor(Resource.Color.md_white_1000);
             SetSupportActionBar(toolbar);
             var view = this.BindingInflate(Resource.Layout.postsLayout, null);
             // postsList = view.FindViewById<MvxListView>(Resource.Id.postsLstv);

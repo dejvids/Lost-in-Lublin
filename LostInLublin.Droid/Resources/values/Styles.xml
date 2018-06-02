@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <resources>
   <style name="MainTheme" parent="Theme.AppCompat.Light.NoActionBar">
-    <item name="colorPrimary">@color/md_deep_orange_500</item>
-    <item name="colorPrimaryDark">@color/md_deep_orange_700</item>
+    <item name="colorPrimary">@color/md_green_500</item>
+    <item name="colorPrimaryDark">@color/md_green_700</item>
     <item name="colorAccent">@color/md_grey_800</item>
     <item name="windowActionBar">false</item>
     <item name="android:windowNoTitle">true</item>
