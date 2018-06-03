@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "930876947890-lavsi3k2k3vjnh0i9n9fssr3gcmrsvvt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "LostInLublin.Droid.LostInLublin.Droid",
+            "certificate_hash": "3c1a2d343ca681ef34b191f7d06a00189ad0ea54"
+          }
+        },
+        {
           "client_id": "930876947890-v7kjckrhurvp0ql826qtj2dija97gilv.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

@@ -14,7 +14,7 @@ namespace LostInLublin.Droid
 {
     public static class Constants
     {
-        public const string SenderID = "";
+        public const string SenderID = "930876947890";
         public const string ListenConnectionString = "Endpoint=sb://myhubnamespace.servicebus.windows.net/;SharedAccessKeyName=DefaultListenSharedAccessSignature;SharedAccessKey=KtSW5MtrH6lDx2E3GTQi5CTBji2CAFfpctjWTnsypQI=";
         public const string NotificationHubName = "mynotficationHub";
     }
