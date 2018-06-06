@@ -9,22 +9,26 @@ using MvvmCross;
 
 namespace LostInLublin.Core.ViewModels
 {
-    public class StartViewModel:MvxViewModel
+    public class StartViewModel : MvxViewModel
     {
         IMvxNavigationService _navigation;
         IMvxLocationWatcher _watcher;
-        DateTime startDate;
-        DateTime endDate;
-        string location;
+        string startDate;
+        string endDate;
+        string location = "Lublin";
         string keyword;
-        public string Location { get; set; }
+        public string Location
+        {
+            get { return location; }
+            set { this.RaiseAndSetIfChanged(ref location, value); }
+        }
         public string KeyWord { get; set; }
-        public DateTime StartDate
+        public string StartDate
         {
             get { return startDate; }
             set { this.RaiseAndSetIfChanged(ref startDate, value); }
         }
-        public DateTime EndDate
+        public string EndDate
         {
             get { return endDate; }
             set { this.RaiseAndSetIfChanged(ref endDate, value); }
@@ -48,6 +52,7 @@ namespace LostInLublin.Core.ViewModels
 
 
         public MvxCommand SearchCmd { get; private set; }
+        public MvxCommand SetLocationCmd { get; private set; }
 
         public StartViewModel(IMvxNavigationService navigationService, IMvxLocationWatcher watcher)
         {
@@ -59,7 +64,13 @@ namespace LostInLublin.Core.ViewModels
                 _navigation.Navigate<PostsViewModel>();
             });
 
-            EndDate = DateTime.Now;
+            EndDate = DateTime.Now.ToShortDateString();
+
+            SetLocationCmd = new MvxCommand(() =>
+            {
+                Long = _watcher.CurrentLocation.Coordinates.Longitude;
+                Lat = _watcher.CurrentLocation.Coordinates.Latitude;
+            });
         }
 
         private void OnLocation(MvxGeoLocation obj)
@@ -70,7 +81,7 @@ namespace LostInLublin.Core.ViewModels
 
         private void OnError(MvxLocationError obj)
         {
-          // Mvx.
+            // Mvx.
         }
     }
 }

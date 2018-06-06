@@ -29,7 +29,7 @@ namespace LostInLublin.Droid
             hub = new NotificationHub(Constants.NotificationHubName,
                                       Constants.ListenConnectionString, this);
 
-            var tags = new List<string>() { };
+            var tags = new List<string>() {"emulator" };
             var regID = hub.Register(token, tags.ToArray()).RegistrationId;
 
             Log.Debug(TAG, $"Successful registration of ID {regID}");

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text;
-
+using System.Threading;
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -43,6 +43,9 @@ namespace LostInLublin.Droid
 
         protected override IMvxAndroidViewPresenter CreateViewPresenter()
         {
+            Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("pl-PL");
+            Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("pl-PL");
+
             Mvx.RegisterSingleton<ImageLoaderService>(new AndroidImageLoader());
             return base.CreateViewPresenter();
         }

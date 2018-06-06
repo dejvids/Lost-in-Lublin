@@ -18,11 +18,11 @@
     "LostInLublin": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "/index.html",
+      "launchUrl": "",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
-      "applicationUrl": "http://localhost:50920/"
+      "applicationUrl": "http://localhost:50920"
     }
   }
 }
