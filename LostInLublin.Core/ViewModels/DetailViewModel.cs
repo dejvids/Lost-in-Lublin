@@ -1,4 +1,5 @@
-﻿using MvvmCross.Commands;
+﻿using LostInLublin.Core.Models;
+using MvvmCross.Commands;
 using MvvmCross.Plugin.WebBrowser;
 using MvvmCross.ViewModels;
 using System;

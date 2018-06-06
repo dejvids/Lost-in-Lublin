@@ -70,14 +70,19 @@ namespace LostInLublin.Droid.Views
         {
             switch (item.ItemId)
             {
-                case 1:
+                case Resource.Id.action_refresh:
                     {
                         Task.Run(() =>
                           this.ViewModel.GetPosts()
                         );
                         Task.WaitAll();
-                        return true;
+                        break;
                     }
+                case Resource.Id.action_add:
+                    ViewModel.AddItemCmd.Execute();
+                    break;
+
+
             }
             return base.OnOptionsItemSelected(item);
         }

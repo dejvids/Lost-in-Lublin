@@ -10,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
 using System.Diagnostics;
+using System.Net;
 
 namespace LostInLublin.Controllers
 {
@@ -20,12 +21,14 @@ namespace LostInLublin.Controllers
         private IConfiguration _configuration;
         private FacebookService _facebookService;
         private IEnumerable<Models.Post> _posts;
+        private ImageLoaderService _imgLoader;
         private DateTime Lastdate;
-        public PostsController(PostsDbContext dbContext, IConfiguration configuration)
+        public PostsController(PostsDbContext dbContext, IConfiguration configuration, ImageLoaderService service)
         {
             this._dbContext = dbContext;
             _configuration = configuration;
             _facebookService = new FacebookService(new FacebookClient());
+            _imgLoader = service;
         }
 
         [HttpGet]
@@ -45,13 +48,13 @@ namespace LostInLublin.Controllers
 
             this._posts = posts;
             return Ok(posts.OrderByDescending(x => x.CreatedDate));
-           // return Ok(posts);
+            // return Ok(posts);
         }
 
-       
-        public async  Task<IEnumerable<PostDto>> GetPostsAsync()
+
+        public async Task<IEnumerable<PostDto>> GetPostsAsync()
         {
-            var createdDate =  _dbContext.Posts.Max(p => p.CreatedDate);
+            var createdDate = _dbContext.Posts.Max(p => p.CreatedDate);
             var minDate = DateTime.Now;
             IEnumerable<PostDto> posts = new List<Services.PostDto>();
             var accountTask = _facebookService.GetAccountAsync(FacebookSettings.AccessToken);
@@ -59,7 +62,7 @@ namespace LostInLublin.Controllers
             var account = accountTask.Result;
             while (minDate >= createdDate)
             {
-                foreach(var endpoint in FacebookSettings.Endpoints)
+                foreach (var endpoint in FacebookSettings.Endpoints)
                 {
                     posts = posts.Concat(await _facebookService.GetPostsAsync(_configuration.GetSection("AccessToken").GetValue<string>("UserTOken"), endpoint.Id, createdDate, minDate.AddDays(1)));
                 }
@@ -98,20 +101,69 @@ namespace LostInLublin.Controllers
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody]PostDto post)
+        public async void Post([FromBody]PostDto post)
         {
             post.Id = PublishPost(post);
+            string fullPicture = null;
+            if (post.Full_Picture != null)
+            {
+                var image = _imgLoader.GetBytes(post.Full_Picture);
+                fullPicture = await _imgLoader.SaveFile();
+            }
+
             _dbContext.Posts.Add(new Post()
             {
                 Id = post.Id,
                 Message = post.Message,
-                Picture = post.Full_Picture,
+                Picture = fullPicture,
                 CreatedDate = DateTime.Now,
                 URL = post.Url
             });
             _dbContext.SaveChanges();
+
+
+            var notification = new NotificationDto { Message = post.Message, Pns = "gcm" };
+            var notificationResult = await SendNotificationAsync(notification);
         }
 
+        private async Task<bool> SendNotificationAsync(NotificationDto notification)
+        {
+            Microsoft.Azure.NotificationHubs.NotificationOutcome outcome = null;
+
+            string pns = notification.Pns;
+            string message = notification.Message;
+
+            switch (pns.ToLower())
+            {
+                case "wns":
+                    // Windows 8.1 / Windows Phone 8.1
+                    var toast = @"<toast><visual><binding template=""ToastText01""><text id=""1"">" +
+                                "From " + ": " + message + "</text></binding></visual></toast>";
+                    outcome = await Notifications.Instance.Hub.SendWindowsNativeNotificationAsync(toast);
+                    break;
+                case "apns":
+                    // iOS
+                    var alert = "{\"aps\":{\"alert\":\"" + "From " + ": " + message + "\"}}";
+                    outcome = await Notifications.Instance.Hub.SendAppleNativeNotificationAsync(alert);
+                    break;
+                case "gcm":
+                    // Android
+                    var notif = "{ \"data\" : {\"message\":\"" + message + "\"}}";
+                    outcome = await Notifications.Instance.Hub.SendGcmNativeNotificationAsync(notif);
+                    break;
+            }
+
+            if (outcome != null)
+            {
+                if (!((outcome.State == Microsoft.Azure.NotificationHubs.NotificationOutcomeState.Abandoned) ||
+                    (outcome.State == Microsoft.Azure.NotificationHubs.NotificationOutcomeState.Unknown)))
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
         private string PublishPost(PostDto post)
         {
             var postTask = _facebookService.PostOnWallAsync(_configuration.GetSection("AccessToken").GetValue<string>("UserToken"), post.Message);

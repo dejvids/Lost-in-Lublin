@@ -3,6 +3,7 @@ using MvvmCross;
 using MvvmCross.IoC;
 using MvvmCross.Localization;
 using MvvmCross.ViewModels;
+using Piller.Services;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -19,6 +20,8 @@ namespace LostInLublin.Core
                 .AsInterfaces()
                 .RegisterAsLazySingleton();
             RegisterAppStart<StartViewModel>();
+           // Mvx.RegisterSingleton<IPermanentStorageService>(new PermanentStorageService());
+
 
         }
 

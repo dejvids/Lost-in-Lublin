@@ -11,8 +11,11 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using LostInLublin.Core;
+using MvvmCross;
 using MvvmCross.Droid.Support.V7.AppCompat;
 using MvvmCross.Logging;
+using MvvmCross.Platforms.Android.Presenters;
+using Services;
 
 namespace LostInLublin.Droid
 {
@@ -38,25 +41,31 @@ namespace LostInLublin.Droid
 
                 => MvxLogProviderType.Serilog;
 
-
-
-            //protected override IMvxLogProvider CreateLogProvider()
-
-            //{
-
-            //    Log.Logger = new LoggerConfiguration()
-
-            //        .MinimumLevel.Debug()
-
-            //        .WriteTo.AndroidLog()
-
-            //        .CreateLogger();
-
-            //    return base.CreateLogProvider();
-
-            //}
-
+        protected override IMvxAndroidViewPresenter CreateViewPresenter()
+        {
+            Mvx.RegisterSingleton<ImageLoaderService>(new AndroidImageLoader());
+            return base.CreateViewPresenter();
         }
+
+        //protected override IMvxLogProvider CreateLogProvider()
+
+        //{
+
+        //    Log.Logger = new LoggerConfiguration()
+
+        //        .MinimumLevel.Debug()
+
+        //        .WriteTo.AndroidLog()
+
+        //        .CreateLogger();
+
+        //    return base.CreateLogProvider();
+
+        //}
+
+    }
+
+    
         
     }
     

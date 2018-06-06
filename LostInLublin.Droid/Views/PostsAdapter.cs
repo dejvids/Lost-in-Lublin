@@ -1,6 +1,7 @@
 ﻿using Android.Content;
 using Android.Views;
 using Android.Widget;
+using LostInLublin.Core.Models;
 using LostInLublin.Core.ViewModels;
 using MvvmCross.Platforms.Android.Binding.BindingContext;
 using MvvmCross.Platforms.Android.Binding.Views;

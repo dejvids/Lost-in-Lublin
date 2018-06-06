@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LostInLublin.Droid", "LostI
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LostInLublin.Core", "LostInLublin.Core\LostInLublin.Core.csproj", "{6C004B6D-BAFE-4903-B2F2-C15D2E48F90A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LostInLublint.Test", "..\LostInLublint.Test\LostInLublint.Test.csproj", "{2E8616D7-6AB6-4C54-8EF0-0F3A11DBB0CE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,10 @@ Global
 		{6C004B6D-BAFE-4903-B2F2-C15D2E48F90A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6C004B6D-BAFE-4903-B2F2-C15D2E48F90A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6C004B6D-BAFE-4903-B2F2-C15D2E48F90A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E8616D7-6AB6-4C54-8EF0-0F3A11DBB0CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E8616D7-6AB6-4C54-8EF0-0F3A11DBB0CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E8616D7-6AB6-4C54-8EF0-0F3A11DBB0CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E8616D7-6AB6-4C54-8EF0-0F3A11DBB0CE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

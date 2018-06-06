@@ -1,4 +1,5 @@
-﻿using MvvmCross.Commands;
+﻿using LostInLublin.Core.Models;
+using MvvmCross.Commands;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 using Newtonsoft.Json;
@@ -21,7 +22,7 @@ namespace LostInLublin.Core.ViewModels
         private MvxCommand<Post> goDetailsCmd;
         //private string endpoint = @"https://zgubionewlublinie.azurewebsites.net/api/posts";
 
-        private string endpoint = @"http://10.0.2.2:50920/api/posts";
+        private string endpoint = Settings.PostsEndpoint;
         public ObservableCollection<Post> Posts { get { return posts; } set { SetProperty(ref posts, value); } }
         public ICommand GoDetailsCmd
         {
@@ -34,6 +35,9 @@ namespace LostInLublin.Core.ViewModels
                 });
             }
         }
+
+        public MvxCommand AddItemCmd { get; private set; }
+
         public PostsViewModel(IMvxNavigationService navigationService)
         {
             _navigationService = navigationService;
@@ -48,6 +52,10 @@ namespace LostInLublin.Core.ViewModels
             //{
             //    Posts = new MvxObservableCollection<Post>(GetPosts().Result);
             //});
+            AddItemCmd = new MvxCommand(() =>
+            {
+                _navigationService.Navigate<AddViewModel>();
+            });
         }
 
         public async Task<IEnumerable<Post>> GetPosts()

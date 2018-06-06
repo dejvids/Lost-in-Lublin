@@ -55,6 +55,9 @@
     <Reference Include="MvvmCross.Plugin.Location, Version=6.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MvvmCross.Plugin.Location.6.0.0\lib\monoandroid81\MvvmCross.Plugin.Location.dll</HintPath>
     </Reference>
+    <Reference Include="MvvmCross.Plugin.PictureChooser, Version=6.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmCross.Plugin.PictureChooser.6.0.0\lib\monoandroid81\MvvmCross.Plugin.PictureChooser.dll</HintPath>
+    </Reference>
     <Reference Include="MvvmCross.Plugin.WebBrowser, Version=6.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MvvmCross.Plugin.WebBrowser.6.0.0\lib\monoandroid81\MvvmCross.Plugin.WebBrowser.dll</HintPath>
     </Reference>
@@ -137,6 +140,9 @@
     <Reference Include="Xamarin.Android.Support.Design, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Xamarin.Android.Support.Design.27.0.2\lib\MonoAndroid81\Xamarin.Android.Support.Design.dll</HintPath>
     </Reference>
+    <Reference Include="Xamarin.Android.Support.Exif, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.Android.Support.Exif.27.0.2\lib\MonoAndroid81\Xamarin.Android.Support.Exif.dll</HintPath>
+    </Reference>
     <Reference Include="Xamarin.Android.Support.Fragment, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Xamarin.Android.Support.Fragment.27.0.2\lib\MonoAndroid81\Xamarin.Android.Support.Fragment.dll</HintPath>
     </Reference>
@@ -180,6 +186,7 @@
   <ItemGroup>
     <Compile Include="Constants.cs" />
     <Compile Include="Converters\PictureConverter.cs" />
+    <Compile Include="InlineValueConverter.cs" />
     <Compile Include="MainApplication.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -189,8 +196,10 @@
     </AndroidResource>
     <Compile Include="MyFirebaseIIDService.cs" />
     <Compile Include="MyFirebaseMessagingService.cs" />
+    <Compile Include="Services\AndroidImageLoader.cs" />
     <Compile Include="Setup.cs" />
     <Compile Include="SplashScreenActivity.cs" />
+    <Compile Include="Views\AddView.cs" />
     <Compile Include="Views\DatePickerFragment.cs" />
     <Compile Include="Views\DetailView.cs" />
     <Compile Include="Views\PostsAdapter.cs" />
@@ -222,7 +231,6 @@
     <Folder Include="Resources\mipmap-xhdpi\" />
     <Folder Include="Resources\mipmap-xxhdpi\" />
     <Folder Include="Resources\mipmap-xxxhdpi\" />
-    <Folder Include="Services\" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\toolbar.axml">
@@ -305,6 +313,20 @@
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
     </AndroidResource>
   </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\icon_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\addLayout.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\ic_add_a_photo_black_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\menu\add_meu.xml" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
@@ -333,6 +355,7 @@
     <Error Condition="!Exists('..\packages\Xamarin.Firebase.Common.60.1142.1\build\MonoAndroid80\Xamarin.Firebase.Common.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.Firebase.Common.60.1142.1\build\MonoAndroid80\Xamarin.Firebase.Common.targets'))" />
     <Error Condition="!Exists('..\packages\Xamarin.Firebase.Iid.60.1142.1\build\MonoAndroid80\Xamarin.Firebase.Iid.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.Firebase.Iid.60.1142.1\build\MonoAndroid80\Xamarin.Firebase.Iid.targets'))" />
     <Error Condition="!Exists('..\packages\Xamarin.Firebase.Messaging.60.1142.1\build\MonoAndroid80\Xamarin.Firebase.Messaging.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.Firebase.Messaging.60.1142.1\build\MonoAndroid80\Xamarin.Firebase.Messaging.targets'))" />
+    <Error Condition="!Exists('..\packages\Xamarin.Android.Support.Exif.27.0.2\build\MonoAndroid81\Xamarin.Android.Support.Exif.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.Android.Support.Exif.27.0.2\build\MonoAndroid81\Xamarin.Android.Support.Exif.targets'))" />
   </Target>
   <Import Project="..\packages\Xamarin.Android.Arch.Core.Common.1.0.0\build\MonoAndroid80\Xamarin.Android.Arch.Core.Common.targets" Condition="Exists('..\packages\Xamarin.Android.Arch.Core.Common.1.0.0\build\MonoAndroid80\Xamarin.Android.Arch.Core.Common.targets')" />
   <Import Project="..\packages\Xamarin.Android.Support.Compat.27.0.2\build\MonoAndroid81\Xamarin.Android.Support.Compat.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Compat.27.0.2\build\MonoAndroid81\Xamarin.Android.Support.Compat.targets')" />
@@ -356,6 +379,7 @@
   <Import Project="..\packages\Xamarin.Firebase.Common.60.1142.1\build\MonoAndroid80\Xamarin.Firebase.Common.targets" Condition="Exists('..\packages\Xamarin.Firebase.Common.60.1142.1\build\MonoAndroid80\Xamarin.Firebase.Common.targets')" />
   <Import Project="..\packages\Xamarin.Firebase.Iid.60.1142.1\build\MonoAndroid80\Xamarin.Firebase.Iid.targets" Condition="Exists('..\packages\Xamarin.Firebase.Iid.60.1142.1\build\MonoAndroid80\Xamarin.Firebase.Iid.targets')" />
   <Import Project="..\packages\Xamarin.Firebase.Messaging.60.1142.1\build\MonoAndroid80\Xamarin.Firebase.Messaging.targets" Condition="Exists('..\packages\Xamarin.Firebase.Messaging.60.1142.1\build\MonoAndroid80\Xamarin.Firebase.Messaging.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Exif.27.0.2\build\MonoAndroid81\Xamarin.Android.Support.Exif.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Exif.27.0.2\build\MonoAndroid81\Xamarin.Android.Support.Exif.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
 		Other similar extension points exist, see Microsoft.Common.targets.
 		<Target Name="BeforeBuild">
