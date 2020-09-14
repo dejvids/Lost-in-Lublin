@@ -44,7 +44,8 @@ namespace LostInLublin.Controllers
             }
 
             var posts = await _dbContext.Posts.ToListAsync();
-            Lastdate = posts.Max(p => p.CreatedDate);
+            if(posts.Any())
+                Lastdate = posts.Max(p => p.CreatedDate);
 
             this._posts = posts;
             return Ok(posts.OrderByDescending(x => x.CreatedDate));
@@ -54,7 +55,9 @@ namespace LostInLublin.Controllers
 
         public async Task<IEnumerable<PostDto>> GetPostsAsync()
         {
-            var createdDate = _dbContext.Posts.Max(p => p.CreatedDate);
+            DateTime createdDate = DateTime.Today;
+            if (await _dbContext.Posts.AnyAsync())
+                createdDate = _dbContext.Posts.Max(p => p.CreatedDate);
             var minDate = DateTime.Now;
             IEnumerable<PostDto> posts = new List<Services.PostDto>();
             var accountTask = _facebookService.GetAccountAsync(FacebookSettings.AccessToken);
@@ -73,9 +76,12 @@ namespace LostInLublin.Controllers
                 //posts = posts.Concat(facebookService.GetPostsAsync(FacebookSettings.AccessToken, FacebookSettings.SpottedMpk, createdDate, minDate).Result);
                 //posts = posts.Concat(facebookService.GetPostsAsync(FacebookSettings.AccessToken, FacebookSettings.SpottedLublin2, createdDate, minDate).Result);
                 //posts = posts.Concat(pollubPosts);
-                if (posts.FirstOrDefault(p => p.CreatedTimeDate == posts.Min(x => x.CreatedTimeDate)).CreatedTimeDate == minDate)
+                if (posts.FirstOrDefault(p => p.CreatedTimeDate == posts.Min(x => x.CreatedTimeDate))?.CreatedTimeDate == minDate)
                     break;
-                minDate = posts.FirstOrDefault(p => p.CreatedTimeDate == posts.Min(x => x.CreatedTimeDate)).CreatedTimeDate;
+                if (posts.FirstOrDefault(p => p.CreatedTimeDate == posts.Min(x => x.CreatedTimeDate))?.CreatedTimeDate != null)
+                    minDate = posts.FirstOrDefault(p => p.CreatedTimeDate == posts.Min(x => x.CreatedTimeDate)).CreatedTimeDate;
+                else
+                    break;
             }
             var newPosts = posts.Where(p => FacebookSettings.KeyWords.Any(w => p.Message != null && p.Message.ToLower().Contains(w)) && !_dbContext.Posts.ToList().Any(x => x.Id == p.Id));
             foreach (var post in newPosts)
@@ -149,7 +155,9 @@ namespace LostInLublin.Controllers
                 case "gcm":
                     // Android
                     var notif = "{ \"data\" : {\"message\":\"" + message + "\"}}";
-                    outcome = await Notifications.Instance.Hub.SendGcmNativeNotificationAsync(notif);
+                    outcome = await Notifications.Instance.Hub.SendGcmNativeNotificationAsync(notif
+                        );
+                    
                     break;
             }
 

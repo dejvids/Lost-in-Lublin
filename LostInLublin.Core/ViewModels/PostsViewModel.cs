@@ -7,6 +7,7 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Net.Http;
 //using System.Reactive;
 using System.Text;
@@ -15,9 +16,10 @@ using System.Windows.Input;
 
 namespace LostInLublin.Core.ViewModels
 {
-    public class PostsViewModel : MvxViewModel
+    public class PostsViewModel : MvxViewModel<SearchModel>
     {
         IMvxNavigationService _navigationService;
+        
         private ObservableCollection<Post> posts;
         private MvxCommand<Post> goDetailsCmd;
         //private string endpoint = @"https://zgubionewlublinie.azurewebsites.net/api/posts";
@@ -35,8 +37,16 @@ namespace LostInLublin.Core.ViewModels
                 });
             }
         }
+        public SearchModel SearchObject { get; private set; }
+        private bool progressBarVisible;
+        public bool ProgressBarVisibile
+        {
+            get { return progressBarVisible; }
+            set { this.RaiseAndSetIfChanged(ref progressBarVisible, value); }
+        }
 
         public MvxCommand AddItemCmd { get; private set; }
+        public MvxCommand SettingsCmd { get; private set; }
 
         public PostsViewModel(IMvxNavigationService navigationService)
         {
@@ -56,15 +66,33 @@ namespace LostInLublin.Core.ViewModels
             {
                 _navigationService.Navigate<AddViewModel>();
             });
+
+            SettingsCmd = new MvxCommand(() =>
+            {
+                _navigationService.Navigate<SettingsViewModel>();
+            });
         }
 
-        public async Task<IEnumerable<Post>> GetPosts()
+        public async void GetPosts()
         {
+            ProgressBarVisibile = true;
             HttpClient client = new HttpClient();
-            var result = await client.GetAsync(endpoint);
-            var content = result.Content.ReadAsStringAsync().Result;
-            Posts = new MvxObservableCollection<Post>(JsonConvert.DeserializeObject<IEnumerable<Post>>(content));
-            return JsonConvert.DeserializeObject<IEnumerable<Post>>(content);
+            var resultString = await client.GetAsync(endpoint);
+            var content = resultString.Content.ReadAsStringAsync().Result;
+            var result = JsonConvert.DeserializeObject<IEnumerable<Post>>(content);
+            if (!string.IsNullOrEmpty(SearchObject.KeyWord))
+                result = result.Where(x => x.Message.Contains(SearchObject.KeyWord));
+            if (!string.IsNullOrEmpty(SearchObject.StartDate))
+                result = result.Where(x => x.CreatedDate > DateTime.Parse(SearchObject.StartDate));
+            if (!string.IsNullOrEmpty(SearchObject.EndDate))
+                result = result.Where(x => x.CreatedDate < DateTime.Parse(SearchObject.EndDate));
+            Posts = new ObservableCollection<Post>(result);
+            ProgressBarVisibile = false;
+        }
+
+        public override void Prepare(SearchModel parameter)
+        {
+            this.SearchObject = parameter ?? new SearchModel();
         }
     }
 }

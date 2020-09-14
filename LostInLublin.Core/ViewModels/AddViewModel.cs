@@ -65,13 +65,13 @@ namespace LostInLublin.Core.ViewModels
 
                 var content = new StringContent(jsonObject, Encoding.UTF8, "application/json");
                 await client.PostAsync(endpoint, content);
-                await _navigationService.Navigate<PostsViewModel>();
+                await _navigationService.Navigate<PostsViewModel,SearchModel>(new SearchModel());
 
             }, () => !string.IsNullOrEmpty(Message));
 
             TakePhotoCommand = new MvxCommand(async () =>
             {
-                var stream = await PictureChooser.TakePicture(1920, 75);
+                var stream = await PictureChooser.TakePicture(640, 75);
                 if(stream !=null )
                     await OnPicture(stream);
                 });

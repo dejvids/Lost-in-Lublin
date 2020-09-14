@@ -12,10 +12,17 @@
         <include
             layout="@layout/toolbar" />
     </LinearLayout>
+    <ProgressBar
+        android:id="@+id/pr_bar"
+        android:layout_below="@id/toolbarLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center" />
     <MvvmCross.Platforms.Android.Binding.Views.MvxListView
         android:id="@+id/postsLstv"
         android:layout_width="match_parent"
         local:MvxItemTemplate="@layout/list_item"
         local:MvxBind="ItemsSource Posts; ItemClick GoDetailsCmd"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_below="@id/pr_bar" />
 </LinearLayout>

@@ -10,6 +10,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Firebase.Iid;
 using LostInLublin.Core;
 using MvvmCross;
 using MvvmCross.Droid.Support.V7.AppCompat;
@@ -47,6 +48,7 @@ namespace LostInLublin.Droid
             Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("pl-PL");
 
             Mvx.RegisterSingleton<ImageLoaderService>(new AndroidImageLoader());
+            Mvx.RegisterSingleton<FirebaseInstanceIdService>(new MyFirebaseIIDService());
             return base.CreateViewPresenter();
         }
 

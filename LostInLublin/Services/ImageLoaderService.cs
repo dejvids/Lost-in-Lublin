@@ -40,7 +40,7 @@ namespace LostInLublin.Services
                 Debug.WriteLine(ex.Message);
                 return string.Empty ;
             }
-            return $"http://10.0.2.2:50920//uploaded/{filename}";
+            return $"https://zgubionewlublinie.azurewebsites.net/uploaded/{filename}";
         }
 
         public string FixBase64ForImage(string Image)

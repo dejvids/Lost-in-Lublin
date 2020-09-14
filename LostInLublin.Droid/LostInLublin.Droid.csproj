@@ -52,6 +52,18 @@
     <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Cheesebaron.MvxPlugins.Settings, Version=3.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cheesebaron.MvxPlugins.Settings.3.2.0\lib\MonoAndroid10\Cheesebaron.MvxPlugins.Settings.dll</HintPath>
+    </Reference>
+    <Reference Include="Cheesebaron.MvxPlugins.Settings.Droid, Version=3.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cheesebaron.MvxPlugins.Settings.3.2.0\lib\MonoAndroid10\Cheesebaron.MvxPlugins.Settings.Droid.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Platform, Version=5.4.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmCross.Platform.5.4.2\lib\MonoAndroid\MvvmCross.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Platform.Droid, Version=5.4.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmCross.Platform.5.4.2\lib\MonoAndroid\MvvmCross.Platform.Droid.dll</HintPath>
+    </Reference>
     <Reference Include="MvvmCross.Plugin.Location, Version=6.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MvvmCross.Plugin.Location.6.0.0\lib\monoandroid81\MvvmCross.Plugin.Location.dll</HintPath>
     </Reference>
@@ -184,6 +196,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bootstrap\SettingsPluginBootstrap.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="Converters\PictureConverter.cs" />
     <Compile Include="InlineValueConverter.cs" />
@@ -197,6 +210,7 @@
     <Compile Include="MyFirebaseIIDService.cs" />
     <Compile Include="MyFirebaseMessagingService.cs" />
     <Compile Include="Services\AndroidImageLoader.cs" />
+    <Compile Include="Settings.cs" />
     <Compile Include="Setup.cs" />
     <Compile Include="SplashScreenActivity.cs" />
     <Compile Include="Views\AddView.cs" />
@@ -204,6 +218,7 @@
     <Compile Include="Views\DetailView.cs" />
     <Compile Include="Views\PostsAdapter.cs" />
     <Compile Include="Views\PostsView.cs" />
+    <Compile Include="Views\SettingsView.cs" />
     <Compile Include="Views\StartView.cs" />
     <Compile Include="Views\ZoomImage.cs" />
   </ItemGroup>
@@ -326,6 +341,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\menu\add_meu.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\settingsLayout.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

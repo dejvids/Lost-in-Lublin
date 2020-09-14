@@ -20,6 +20,8 @@ using MvvmCross.Views;
 using Android.Content.PM;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Android.Widget;
+using Android.Opengl;
 
 namespace LostInLublin.Droid.Views
 {
@@ -32,6 +34,7 @@ namespace LostInLublin.Droid.Views
     {
         public const string TAG = "MainActivity";
         MvxListView postsList;
+        ProgressBar loader;
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
@@ -51,12 +54,21 @@ namespace LostInLublin.Droid.Views
             toolbar.SetTitleTextColor(Resource.Color.md_white_1000);
             SetSupportActionBar(toolbar);
             var view = this.BindingInflate(Resource.Layout.postsLayout, null);
+
+            loader = FindViewById<ProgressBar>(Resource.Id.pr_bar);
             // postsList = view.FindViewById<MvxListView>(Resource.Id.postsLstv);
             // postsList.ItemTemplateId = Resource.Layout.postItem;
             // postsList.Adapter = new PostsAdapter(this.ApplicationContext, (IMvxAndroidBindingContext)this.BindingContext);
             // postsList.ItemsSource = new List<Post> { new Post { Message = "Znaleziono" }, new Post { Message = "szukaj" } };
-            // SetBindings();
-            var p = this.ViewModel.GetPosts();
+            SetBindings();
+            LoadData();
+            
+        }
+
+        private async void LoadData()
+        {
+
+            this.ViewModel.GetPosts();
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
@@ -81,6 +93,9 @@ namespace LostInLublin.Droid.Views
                 case Resource.Id.action_add:
                     ViewModel.AddItemCmd.Execute();
                     break;
+                case Resource.Id.action_settings:
+                    ViewModel.SettingsCmd.Execute();
+                    break;
 
 
             }
@@ -96,7 +111,13 @@ namespace LostInLublin.Droid.Views
                 .For(v => v.ItemsSource)
                 .To(vm => vm.Posts);
 
-            //bindingSet.Apply();
+
+            bindingSet.Bind(loader)
+                .For(v => v.Visibility)
+                .To(vm => vm.ProgressBarVisibile)
+                .WithConversion(new InlineValueConverter<bool, ViewStates>(x => { return x ? ViewStates.Visible : ViewStates.Gone; }));
+
+            bindingSet.Apply();
         }
 
     }

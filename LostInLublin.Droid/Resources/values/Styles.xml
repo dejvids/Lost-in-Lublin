@@ -46,11 +46,6 @@
     <item android:color="?attr/colorPrimaryDark"/>
   </selector>-->
 
-  <style name="ListSecondaryText">
-    <item name="android:textSize">14sp</item>
-    <item name="android:textColor">?android:textColorSecondary</item>
-  </style>
-
   <style name="DialogTitle">
     <item name="android:textSize">16sp</item>
     <item name="android:textColor">?android:textColorSecondary</item>

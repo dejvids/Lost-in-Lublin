@@ -44,7 +44,7 @@ namespace LostInLublin.Droid.Views
 
             picture = FindViewById<ImageView>(Resource.Id.photo);
             
-            ActivityCompat.RequestPermissions(this, new String[] { Manifest.Permission.WriteExternalStorage }, 0);
+            ActivityCompat.RequestPermissions(this, new String[] { Manifest.Permission.WriteExternalStorage, Manifest.Permission.Camera }, 0);
 
             SetBinding();
         }

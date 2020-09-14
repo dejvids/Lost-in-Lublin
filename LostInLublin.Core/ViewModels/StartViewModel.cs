@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Text;
 using MvvmCross.Plugin.Location;
 using MvvmCross;
+using LostInLublin.Core.Models;
 
 namespace LostInLublin.Core.ViewModels
 {
@@ -61,15 +62,16 @@ namespace LostInLublin.Core.ViewModels
             _watcher.Start(new MvxLocationOptions(), OnLocation, OnError);
             SearchCmd = new MvxCommand(() =>
             {
-                _navigation.Navigate<PostsViewModel>();
+                _navigation.Navigate<PostsViewModel,SearchModel>(new SearchModel { KeyWord = this.KeyWord, StartDate = this.StartDate, EndDate = this.EndDate});
             });
 
             EndDate = DateTime.Now.ToShortDateString();
 
             SetLocationCmd = new MvxCommand(() =>
             {
-                Long = _watcher.CurrentLocation.Coordinates.Longitude;
-                Lat = _watcher.CurrentLocation.Coordinates.Latitude;
+                // Long = _watcher.CurrentLocation.Coordinates.Longitude;
+                // Lat = _watcher.CurrentLocation.Coordinates.Latitude;
+                Location = "Lublin";
             });
         }
 

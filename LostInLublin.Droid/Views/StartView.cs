@@ -49,10 +49,18 @@ namespace LostInLublin.Droid.Views
 
 
             geocoder = new Geocoder(this.ApplicationContext);
+            try
+            {
             var addresses = geocoder.GetFromLocation(ViewModel.Lat, ViewModel.Long, 1);
+
             if (addresses.Count > 0)
             {
                ViewModel.Location= addresses[0].Locality;
+            }
+            }
+            catch(Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine(ex.Message);
             }
 
             locationTxt = FindViewById<EditText>(Resource.Id.locationBx);
@@ -113,11 +121,13 @@ namespace LostInLublin.Droid.Views
 
             bindingSet.Bind(startDate)
                 .For(v => v.Text)
-                .To(vm => vm.StartDate);
+                .To(vm => vm.StartDate)
+                .TwoWay();
 
             bindingSet.Bind(endDate)
                 .For(v => v.Text)
-                .To(vm => vm.EndDate);
+                .To(vm => vm.EndDate)
+                .TwoWay();
 
             bindingSet.Bind(locationBtn)
                 .For(nameof(View.Click))
@@ -126,6 +136,11 @@ namespace LostInLublin.Droid.Views
             bindingSet.Bind(locationTxt)
                 .For(v => v.Text)
                 .To(vm => vm.Location)
+                .Mode(MvvmCross.Binding.MvxBindingMode.TwoWay);
+
+            bindingSet.Bind(keyWordTxt)
+                .For(v => v.Text)
+                .To(vm => vm.KeyWord)
                 .Mode(MvvmCross.Binding.MvxBindingMode.TwoWay);
 
             bindingSet.Apply();

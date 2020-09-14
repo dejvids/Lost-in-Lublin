@@ -9,6 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Cheesebaron.MvxPlugins.Settings" Version="3.2.0" />
     <PackageReference Include="MvvmCross" Version="6.0.0" />
     <PackageReference Include="MvvmCross.Plugin.File" Version="6.0.0" />
     <PackageReference Include="MvvmCross.Plugin.Json" Version="6.0.0" />
